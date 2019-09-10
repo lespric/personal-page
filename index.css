@@ -1,0 +1,201 @@
+@media all and (orientation: portrait) {
+  @media (min-width: 980px) {
+    html {
+      font-size: 2rem;
+    }
+  } /* 竖屏电脑 */
+  @media (min-width: 768px) and (max-width: 979px) {
+    html {
+      font-size: 1.5rem;
+    }
+  } /* 竖屏平板 */
+  @media (max-width: 767px) {
+    html {
+      font-size: 1rem;
+    }
+  } /* 竖屏手机 */
+}
+
+@media all and (orientation: landscape) {
+  @media (min-width: 1024px) {
+    html {
+      font-size: 2rem;
+    }
+  } /*横屏网页 */
+  @media (max-width: 1023px) {
+    html {
+      font-size: 1rem;
+    }
+  }
+} /* 横屏手机 */
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  font-size: .625rem;
+  font-family: STHeiti, "Microsoft YaHei", sans-serif;
+  font-weight: 300;
+
+  background-color: #fff;
+} /* 设置全局属性 */
+button,
+input,
+input:focus {
+  background: none;
+  outline: none;
+  border: none;
+} /* 去除默认样式 */
+
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 1000;
+
+  width: 100%;
+  height: 4.4em;
+
+  color: #fff;
+  background-color: #5fc0cd;
+} /* 固定标题栏在顶部 */
+.back {
+    position: absolute;
+    left: 0;
+    padding: 0;
+
+    width: 3.45em;
+    height: 100%;
+
+    background: url(../personal-page/img/back@2x.png) no-repeat center;
+    background-size: .75em 1.35em;
+} /* 定义按钮的位置、点击范围和图标应用 */
+.back:active {
+    background-color: #4c9aa4;
+    background-size: .9em 1.62em;
+} /* 定义点击时按钮的样式 */
+.title {
+    margin: auto auto;
+
+    font-size: 1.8em;
+    font-weight: 500;
+} /* 定义标题位置及字体类型 */
+
+main {
+    margin-top: 4.4em;
+} /* 定义主体内容的开始位置 */
+
+.top_half {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 16.4em;
+}
+.bg_img {
+    position: absolute;
+    display: flex;
+
+    width: 300%;
+    height: 16.4em;
+} /* 为使图片轮播，采用包含块移动时带图片移动，由此包含块宽度为图片的三倍，且溢出部分隐藏 */
+.img1 {
+    width: 33.3%;
+    height: 100%;
+
+    background: url(../personal-page/img/bg1@2x.png) no-repeat;
+    background-size: cover;
+}
+.img2 {
+    width: 33.4%;
+    height: 100%;
+
+    background: url(../personal-page/img/bg2@2x.png) no-repeat;
+    background-size: cover;
+}
+.img3 {
+    width: 33.3%;
+    height: 100%;
+
+    background: url(../personal-page/img/bg1@2x.png) no-repeat;
+    background-size: cover;
+} /* 赋予上半部分的背景图片，及轮播时各图片的尺寸为包含块的三分之一 */
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-33.3%);
+    }
+    100% {
+        transform: translateX(-66.7%);
+    }
+} /* 声明一个关键帧动画move，时间的0%处为img1，50%时移动为img2，100%时移动为img1，如此循环 */
+.bg_img {
+    -webkit-animation:  move 5s  ease-in-out infinite;
+    -moz-animation:  move 5s  ease-in-out infinite;
+    -ms-animation:  move 5s  ease-in-out infinite;
+    -o-animation:  move 5s  ease-in-out infinite;
+    animation: move 5s ease-in-out infinite;
+} /* 给包含块定义动画属性，从左到右的属性为：
+应用关键帧动画move，动画总时长为5s，动画的缓动效果为渐进渐出(ease-in-out)，infinite为循环播放 */
+.bg_img:hover {
+    animation-play-state: paused;
+} /* 悬浮时，动画效果停止 */
+
+.information {
+    position: absolute;
+    top: 4em;
+    left: 1.5em;
+    display: flex;
+
+    color: #FFF;
+}
+.head {
+    width: 8.4em;
+    height: 8.4em;
+
+    background: url(../personal-page/img/head@2x.png) no-repeat;
+    background-size: cover;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+.account {
+    margin-top: 1.8em;
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+
+    height: 1.8em;
+}
+.name {
+    font-size: 1.8em;
+}
+.age {
+    margin-left: 1em;
+
+    font-size: 1.4em;
+}
+.address {
+    margin-top: 1.2em;
+    margin-left: 2.2em;
+    display: flex;
+    align-items: center;
+    
+    height: 1.2em;
+
+}
+.address .icon {
+    width: .9em;
+    height: 1.2em;
+
+    background: url(../personal-page/img/location@2x.png) no-repeat;
+    background-size: cover;
+}
+.address .text {
+    margin-left: .5em;
+    font-size: 1.2em;
+}
