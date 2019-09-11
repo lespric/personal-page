@@ -161,6 +161,23 @@ main {
     background-size: cover;
   }
 } /* 媒体查询，识别dpi为三倍时，应用三倍图 */
+.img1::after,
+.img3::after {
+    content: "";  
+
+    width: 33.3%;
+    height: 100%;
+
+    background-color: #89eacd;
+}
+.img2::after {
+    content: "";
+
+    width: 33.4%;
+    height: 100%;
+
+    background-color: #addde9;
+} /* 预加载时，作为占位图呈现 */
 
 @keyframes move {
   0%,
