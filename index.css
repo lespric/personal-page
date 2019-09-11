@@ -480,11 +480,13 @@ aside form {
 } /* 定义输入内容区的样式 */
 .content {
   padding-bottom: 1em;
-  font-size: 1.6em;
-
   width: 100%;
+  
+  font-size: 1.6em;
+  font-family: "HiraginoSansGBW3", sans-serif;
 }
 .content::-webkit-input-placeholder {
+
   color: #b0b0b0;
 }
 .content:-moz-placeholder {
