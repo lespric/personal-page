@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="format-detection" content="telphone=no, email=no" />
+    <meta name="format-detection" content="email=no" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -87,17 +87,31 @@
           </span>
         </section>
       </article>
+       
+      <aside id="written">
+          <form action="save.php" method="post" name="message">
+              <div class="operating">
+                  <button class="close" type="button" name="close">关闭</button>
+                  <button class="finish" type="submit" name="finish">完成</button>
+              </div>
+              <div class="writing">
+                  <textarea class=content name="content" cols="30" rows="10" placeholder="留言:" required autofocus>
+                  </textarea>
+                  <span class="num">0/400</span>
+              </div>
+            </form>
+      </aside>
 
       <footer>
         <section class="message">
-          <button type="button">留言</button>
+          <button type="button" name="write" onclick="openwindow()">留言</button>
         </section>
         <section class="phone">
-          <button type="button">电话联系</button>
+          <button type="button" name="call">电话联系</button>
         </section>
       </footer>
     </main>
 
-    <script src="" async defer></script>
+    <script src="index.js" async defer></script>
   </body>
 </html>

@@ -66,7 +66,9 @@ body {
 } /* 设置全局属性，由于轮播的div宽度撑宽body，所以添加隐藏水平滚动内容 */
 button,
 input,
-input:focus {
+input:focus,
+textarea,
+textarea:focus {
   background: none;
   outline: none;
   border: none;
@@ -161,10 +163,12 @@ main {
 } /* 媒体查询，识别dpi为三倍时，应用三倍图 */
 
 @keyframes move {
-  0%, 20% {
+  0%,
+  20% {
     transform: translateX(0);
   }
-  50%, 70% {
+  50%,
+  70% {
     transform: translateX(-33.3%);
   }
   100% {
@@ -336,9 +340,7 @@ section[class$="introduction"] span:first-child {
   color: #999;
 } /* 定义“自我介绍”的左侧文字固定位置，单独改变排列位置在顶部 */
 section[class$="introduction"] span:nth-child(2) {
-  margin: 0.7em;
-  margin-left: 1em;
-  margin-right: 3em;
+  margin: 0.7em 3em 0.7em 1em;
 
   font-size: 1.4em;
   line-height: 1.5;
@@ -362,7 +364,7 @@ footer {
   height: 4.2em;
 
   border: 0.1em solid #5fc0cd;
-  border-radius: .5em;
+  border-radius: 0.5em;
   background-color: #fff;
 }
 .message button {
@@ -387,7 +389,7 @@ footer {
   height: 4.2em;
 
   border: 0.1em solid #5fc0cd;
-  border-radius: .5em;
+  border-radius: 0.5em;
   background-color: #5fc0cd;
 }
 .phone button {
@@ -404,3 +406,118 @@ footer {
   background-color: #fff;
   color: #5fc0cd;
 } /* 定义“电话”按钮样式 */
+
+aside {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 1200;
+  display: none;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, .5);
+} /* 定义弹出页 */
+aside form {
+  position: fixed;
+  top: -33em;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 26.6em;
+  background-color: #fff;
+} /* 定义弹出的留言窗口 */
+
+.operating {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 3.9em;
+
+  border-bottom: 0.1em solid #e5e5e5;
+}
+.close {
+  position: absolute;
+  left: 0;
+
+  width: 4.5em;
+  height: 100%;
+
+  font-size: 1.6em;
+  font-family: "HiraginoSansGBW3", sans-serif;
+  color: #ea8989;
+}
+.finish {
+  position: absolute;
+  right: 0;
+
+  width: 4.5em;
+  height: 100%;
+
+  font-size: 1.6em;
+  font-family: "HiraginoSansGBW3", sans-serif;
+  color: #ea8989;
+} /* 定义操作区，以及两个按钮的样式，奇怪的是，按钮继承不了样式 */
+.close:active,
+.finsh:active {
+  background-color: #e5e5e5;
+  color: #fff;
+} /* 定义按钮点击状态时的样式 */
+
+.writing {
+  display: flex;
+  margin: 2em;
+  margin-bottom: 0.4em;
+  overflow: hidden;
+
+  width: 89%;
+  height: 100%;
+  border-bottom: 0.1em solid #e5e5e5;
+} /* 定义输入内容区的样式 */
+.content {
+  padding-bottom: 1em;
+  font-size: 1.6em;
+
+  width: 100%;
+}
+.content::-webkit-input-placeholder {
+  color: #b0b0b0;
+}
+.content:-moz-placeholder {
+  color: #b0b0b0;
+}
+.content::-moz-placeholder {
+  color: #b0b0b0;
+}
+.content:-ms-input-placeholder {
+  color: #b0b0b0;
+} /* 定义多行文本框的样式 */
+
+.num {
+  position: absolute;
+  bottom: 1em;
+  right: 1.5em;
+
+  font-size: 1.4em;
+  color: #b0b0b0;
+} /* 定义字数区的样式 */
+
+@keyframes slide {
+   0% {
+       top: -33em;
+   }
+   100% {
+       top: 6.4em;
+   }
+}
+aside form {
+  -webkit-animation: slide 1s ease forwards;
+  -moz-animation: slide 1s ease forwards;
+  -ms-animation: slide 1s ease forwards;
+  -o-animation: slide 1s ease forwards;
+  animation: slide 1s ease forwards;
+} /* 定义留言板出现的动画 */
