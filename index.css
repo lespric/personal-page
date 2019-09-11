@@ -426,7 +426,7 @@ aside form {
   flex-direction: column;
 
   width: 100%;
-  height: 26.6em;
+  height: 25em;
   background-color: #fff;
 } /* 定义弹出的留言窗口 */
 
@@ -478,6 +478,7 @@ aside form {
   height: 100%;
   border-bottom: 0.1em solid #e5e5e5;
 } /* 定义输入内容区的样式 */
+
 .content {
   padding-bottom: 1em;
   width: 100%;
