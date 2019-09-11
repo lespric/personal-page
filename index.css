@@ -161,7 +161,7 @@ main {
     background-size: cover;
   }
 } /* 媒体查询，识别dpi为三倍时，应用三倍图 */
-.img1::after {
+.img1 ::after {
     content: "";  
     position: absolute;
     top: 0;
@@ -172,7 +172,7 @@ main {
 
     background-color: #89eacd;
 }
-.img2::after {
+.img2 ::after {
     content: "";
     position: absolute;
     top: 0;
@@ -183,7 +183,7 @@ main {
 
     background-color: #addde9;
 } 
-.img3::after {
+.img3 ::after {
     content: "";  
     position: absolute;
     top: 0;
