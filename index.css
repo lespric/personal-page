@@ -164,6 +164,9 @@ main {
 .img1::after,
 .img3::after {
     content: "";  
+    position: absolute;
+    top: 0;
+    left: 0;
 
     width: 33.3%;
     height: 100%;
@@ -172,6 +175,9 @@ main {
 }
 .img2::after {
     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
 
     width: 33.4%;
     height: 100%;
