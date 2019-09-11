@@ -161,7 +161,9 @@ main {
     background-size: cover;
   }
 } /* 媒体查询，识别dpi为三倍时，应用三倍图 */
-.img1 ::after {
+
+/* 未成功，先预留
+.img1::after {
     content: "";  
     position: absolute;
     top: 0;
@@ -172,7 +174,7 @@ main {
 
     background-color: #89eacd;
 }
-.img2 ::after {
+.img2::after {
     content: "";
     position: absolute;
     top: 0;
@@ -183,7 +185,7 @@ main {
 
     background-color: #addde9;
 } 
-.img3 ::after {
+.img3::after {
     content: "";  
     position: absolute;
     top: 0;
@@ -193,7 +195,7 @@ main {
     height: 100%;
 
     background-color: #89eacd;
-}/* 预加载时，作为占位图呈现 */
+} 预加载时，作为占位图呈现 */
 
 @keyframes move {
   0%,
