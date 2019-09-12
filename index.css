@@ -91,11 +91,14 @@
     url("../personal-page/fonts/HiraginoSansGBW3/HiraginoSansGBW3.svg")
       format("svg");
 } /* 引用设计字体 */
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  overflow-y: auto;
+  
+  overflow-x: hidden;
   display: flex;
   
   width: 100%;
