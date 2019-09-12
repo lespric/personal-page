@@ -1,7 +1,7 @@
 @media all and (orientation: portrait) {
   @media (min-width: 980px) {
     html {
-      font-size: 1rem;
+      font-size: 2rem;
     }
     body {
       min-width: 960px;
@@ -34,8 +34,30 @@
     footer {
       left: 4em;
       right: 0;
-    }
-  } /* 
+    } /* 实现横屏网页时，两边留白，中间显示内容的布局 */
+
+    main::before {
+      content: "";
+      position: fixed;
+      top: 4.4em;
+      left: 0;
+      z-index: 1000;
+
+      width: calc(50% - 480px);
+      height: 100%;
+      background-color: #F6F6F6;
+    } /* 为了统一，calc的四则运算，其加减乘除符号前后都要加空格 */
+    main::after {
+      content: "";
+      position: fixed;
+      top: 4.4em;
+      right: 0;
+      z-index: 1000;
+
+      width: calc(50% - 480px);
+      height: 100%;
+      background-color: #F6F6F6;
+    } /* 使轮播图片的显示区域限制在main的范围内，通过两边留白遮挡的方式 */
   } /*横屏网页 */
   @media (max-width: 1023px) {
     html {
@@ -111,14 +133,30 @@ header {
 
   width: 3.45em;
   height: 100%;
+} /* 定义按钮的位置、点击范围 */
 
-  background: url(../personal-page/img/back@2x.png) no-repeat center;
-  background-size: 0.75rem 1.35rem;
-} /* 定义按钮的位置、点击范围和图标应用 */
+.back::before {
+  content: "";
+  position: absolute;
+  left: 1.35em;
+  top: 1em;
+
+  width: 1em;
+  height: 1em;
+
+  border-top: .2em solid #FFF;
+  border-left: .2em solid #FFF;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+} /* 绘制按钮的形状 */
 .back:active {
   background-color: #4c9aa4;
-  background-size: 0.9em 1.62em;
 } /* 定义点击时按钮的样式 */
+
 .title {
   margin: auto auto;
 
@@ -140,7 +178,7 @@ main {
   height: 16.4em;
 }
 .bg_img {
-  position: absolute;
+  position: relative;
   display: flex;
 
   width: 300%;
@@ -149,7 +187,7 @@ main {
 .img1 {
   width: 33.3%;
   height: 100%;
-  z-index: 100;
+
 
   background: url(../personal-page/img/bg1@2x.png) no-repeat;
   background-size: cover;
@@ -158,7 +196,7 @@ main {
 .img2 {
   width: 33.4%;
   height: 100%;
-  z-index: 100;
+
 
   background: url(../personal-page/img/bg2@2x.png) no-repeat;
   background-size: cover;
@@ -167,12 +205,11 @@ main {
 .img3 {
   width: 33.3%;
   height: 100%;
-  z-index: 1000;
 
   background: url(../personal-page/img/bg1@2x.png) no-repeat;
   background-size: cover;
   background-color: #89eacd; 
-} /* 赋予上半部分的背景图片，及轮播时各图片的尺寸为包含块的三分之一 */
+} /* 赋予上半部分的背景图片，及轮播时各图片的尺寸为包含块的三分之一，添加背景颜色便于预加载 */
 @media screen and (-webkit-device-pixel-ratio: 3) {
   .img1 {
     background: url(../personal-page/img/bg1@3x.png) no-repeat;
