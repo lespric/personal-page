@@ -93,12 +93,10 @@
 } /* 引用设计字体 */
 html {
   overflow-x: hidden;
-}
+} /* 给body添加后，在手机端仍有横向滑动，在html添加就解决 */
 body {
   margin: 0;
   padding: 0;
-  
-  overflow-x: hidden;
   display: flex;
   
   width: 100%;
@@ -171,14 +169,12 @@ header {
 main {
   margin-top: 4.4em;
   width: 100%;
-  overflow-x: hidden;
 
   background-color: #FFF;
 } /* 定义主体内容的开始位置 */
 
 .top_half {
   position: relative;
-  overflow-x: hidden;
 
   width: 100%;
   height: 16.4em;
