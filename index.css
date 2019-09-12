@@ -264,6 +264,12 @@ main {
 
   background: url(../personal-page/img/head@2x.png) no-repeat;
   background-size: cover;
+} 
+@media screen and (-webkit-device-pixel-ratio: 3) {
+  .information .head {
+    background: url(../personal-page/img/head@3x.png) no-repeat;
+    background-size: cover;
+  }
 } /* 把个人信息分为头像和基本信息两个区域，实现并排一行 */
 .information .profile {
   display: flex;
@@ -300,6 +306,12 @@ main {
 
   background: url(../personal-page/img/location@2x.png) no-repeat;
   background-size: cover;
+}
+@media screen and (-webkit-device-pixel-ratio: 3) {
+  .address .icon {
+    background: url(../personal-page/img/location@3x.png) no-repeat;
+    background-size: cover;
+  }
 }
 .address .text {
   margin-left: 0.5em;
@@ -381,6 +393,12 @@ section[class$="label"] .icon {
 
   background: url(../personal-page/img/label@2x.png) no-repeat;
   background-size: cover;
+} 
+@media screen and (-webkit-device-pixel-ratio: 3) {
+  section[class$="label"] .icon {
+    background: url(../personal-page/img/label@3x.png) no-repeat;
+    background-size: cover;
+  }
 } /* 定义两个标签图标 */
 
 section[class$="introduction"] {
