@@ -24,8 +24,16 @@
     html {
       font-size: 1rem;
     }
-    body {
-      padding: 0 25%;
+    main,
+    footer,
+    aside,
+    aside form {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    footer {
+      left: 4em;
+      right: 0;
     }
   } /* 
   } /*横屏网页 */
@@ -65,13 +73,14 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
   
   width: 100%;
 
   font-size: 0.625rem;
   font-family: "STHeitiSC-Light", sans-serif;
 
-  background-color: #fff;
+  background-color: #F6F6F6;
 } /* 设置全局属性，由于轮播的div宽度撑宽body，所以添加隐藏水平滚动内容 */
 button,
 input,
@@ -120,6 +129,8 @@ header {
 main {
   margin-top: 4.4em;
   width: 100%;
+
+  background-color: #FFF;
 } /* 定义主体内容的开始位置 */
 
 .top_half {
@@ -138,23 +149,29 @@ main {
 .img1 {
   width: 33.3%;
   height: 100%;
+  z-index: 100;
 
   background: url(../personal-page/img/bg1@2x.png) no-repeat;
   background-size: cover;
+  background-color: #89eacd; 
 }
 .img2 {
   width: 33.4%;
   height: 100%;
+  z-index: 100;
 
   background: url(../personal-page/img/bg2@2x.png) no-repeat;
   background-size: cover;
+  background-color: #addde9;
 }
 .img3 {
   width: 33.3%;
   height: 100%;
+  z-index: 1000;
 
   background: url(../personal-page/img/bg1@2x.png) no-repeat;
   background-size: cover;
+  background-color: #89eacd; 
 } /* 赋予上半部分的背景图片，及轮播时各图片的尺寸为包含块的三分之一 */
 @media screen and (-webkit-device-pixel-ratio: 3) {
   .img1 {
@@ -170,41 +187,6 @@ main {
     background-size: cover;
   }
 } /* 媒体查询，识别dpi为三倍时，应用三倍图 */
-
-/* 未成功，先预留
-.img1::after {
-    content: "";  
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 33.3%;
-    height: 100%;
-
-    background-color: #89eacd;
-}
-.img2::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 33.4%;
-    height: 100%;
-
-    background-color: #addde9;
-} 
-.img3::after {
-    content: "";  
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 33.3%;
-    height: 100%;
-
-    background-color: #89eacd;
-} 预加载时，作为占位图呈现 */
 
 @keyframes move {
   0%,
