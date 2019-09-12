@@ -1,7 +1,10 @@
 @media all and (orientation: portrait) {
   @media (min-width: 980px) {
     html {
-      font-size: 2rem;
+      font-size: 1rem;
+    }
+    body {
+      min-width: 960px;
     }
   } /* 竖屏电脑 */
   @media (min-width: 768px) and (max-width: 979px) {
@@ -19,8 +22,12 @@
 @media all and (orientation: landscape) {
   @media (min-width: 1024px) {
     html {
-      font-size: 2rem;
+      font-size: 1rem;
     }
+    body {
+      padding: 0 25%;
+    }
+  } /* 
   } /*横屏网页 */
   @media (max-width: 1023px) {
     html {
@@ -58,6 +65,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  
+  width: 100%;
 
   font-size: 0.625rem;
   font-family: "STHeitiSC-Light", sans-serif;
@@ -389,6 +398,7 @@ footer {
   position: fixed;
   bottom: 0;
   display: flex;
+  justify-content: space-between;
   padding: 2em;
 
   width: 100%;
@@ -418,7 +428,7 @@ footer {
 } /* 定义“留言”按钮样式 */
 
 .phone {
-  margin-left: 1.2em;
+  margin-right: 4em;
 
   width: 42.5%;
   height: 4.2em;
