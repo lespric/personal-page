@@ -11,15 +11,17 @@
     width: 3.6em;
     height: 100%;
     &-left {
+        @extend .header-btn;
         left: 0;
     }
     &-right {
+        @extend .header-btn;
         right: 0;
     }
     &:hover {
         background-color: darken($color-primary, 20%);
     }
-    &::before {
+    &-left::before {
         content: "";
 
         width: 1em;
@@ -34,21 +36,51 @@
 }
 // 定义标题栏的左端按钮的边距和大小
 
-
-
 .header {
-    &-switch {
+    &-checkbox {
         display: none;
-
     }
+    &-switch {
+        position: relative;
+        
+        display: flex;
+        align-items: center;
+        width: 14.3em;
+        height: 3.5em;
+        background-color: #55A8B3;
+        border-radius: 0.5em;
+        
+        &-bg {
+            position: absolute;
+            right: 0;
+
+            width: 7.2em;
+            height: 3.5em;
+            background-color: #FFF;
+            border-radius: 0.5em;
+
+            transition: right 0.2s linear;
+        }
+        &-left,
+        &-right {
+           z-index: 1;
+           width: 50%;
+           text-align: center;
+
+           transition: color 0.2s linear;
+        }
+    }
+
+    &-checkbox:checked + &-switch &-switch-bg {
+        right: 50%;
+    }
+
     &-map {
         width: 5.1em;
         height: 4.4em;
-
-        background: url(../img2/map@2x.png) no-repeat;
-        background-size: cover;
     }
 }
+// 定义标题栏的切换开关的样式，以及动画效果
 
 
 .footer-btn {
@@ -79,3 +111,34 @@
     }
 }
 // 定义底部栏的按钮的大小和悬浮状态
+
+.home-footer {
+    &-left,
+    &-right {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    & .left-icon {
+       width: 2.4em;
+       height: 2.4em;
+
+       background: url(../img/home@3x.png) no-repeat center;
+       background-size: 2.3 2em;
+    }
+    & .right-icon {
+        width: 2.4em;
+        height: 2.4em;
+ 
+        background: url(../img/user@3x.png) no-repeat center;
+        background-size: 2.1em 2.1em;
+     }
+    & .rudder {
+        width: 4.7em;
+        height: 4.7em;
+
+        background: url(../img/write@3x.png) no-repeat;
+        background-size: cover;
+     }
+}
+// 定义首页底部标签栏的各个按钮样式

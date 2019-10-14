@@ -11,3 +11,15 @@
     width: 100%;
 }
 // 定义底部的宽和边距值，并固定在底部，并达到水平居中
+
+.home-footer {
+    @extend .footer;
+    height: 5em;
+    padding: 0.4em 8em;
+
+    align-items: content;
+    justify-content: space-between;
+
+    background-color: #F8FAFB;
+}
+// 定义首页的底部的宽和边距值

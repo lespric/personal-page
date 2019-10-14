@@ -19,19 +19,19 @@
 
     <link rel="stylesheet" href="../personal-page/sass/main.css" />
     <!--index.css对index.html文件的样式设置-->
-    <link rel="stylesheet" href="../home/src/iosSelect.css" />
+    <link rel="stylesheet" href="../personal-page/sass/vendors/iosSelect.css" />
     <!--iosSelect.css对弹出页和选择器的样式进行设置-->
   </head>
 
   <body>
     <header class="header">
       <button type="button" class="header-btn-right header-map"></button>
-      <input type="checkbox" id="find" onclick="window.location.href='#top'" />
+      <input class="header-checkbox" type="checkbox" id="find" onclick="window.location.href='#top'" />
       <!--点击时页面返回到顶部-->
-      <label for="find">
-        <span class="button_bg"></span>
-        <span class="text_left">找雇主</span>
-        <span class="text_right">找护工</span>
+      <label class="header-switch" for="find">
+        <span class="header-switch-bg"></span>
+        <span class="header-switch-left switch-font-left">找雇主</span>
+        <span class="header-switch-right switch-font-right">找护工</span>
       </label>
       <!--为能关联到主要内容的页面切换，需其父元素为同一个-->
     </header>
@@ -277,23 +277,23 @@
       </article>
     </main>
 
-    <footer>
-      <button class="home">
-        <div class="icon"></div>
+    <footer class="home-footer">
+      <button class="home-footer-left">
+        <div class="left-icon"></div>
         <span>首页</span>
       </button>
 
       <button type="button" class="rudder"></button>
 
-      <button class="user">
-        <div class="icon"></div>
+      <button class="home-footer-right">
+        <div class="right-icon"></div>
         <span>我的</span>
       </button>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="home.js"></script>
     <!--index.js储存各个选项内容作为数组-->
-    <script src="../home/src/iosSelect.js" async defer></script>
+    <script src="../personal-page/sass/vendors/iosSelect.js" async defer></script>
     <!--iosSelect.js对弹出页和选择框进行动态设置-->
 
     <script type="text/javascript">

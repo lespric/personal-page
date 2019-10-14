@@ -73,6 +73,24 @@ body {
 }
 // 定义导航栏的字体大小和颜色
 
+.switch-font {
+  &-left {
+    font-size: 1.7em;
+    color: #FFF;
+  }
+  &-right {
+    font-size: 1.7em;
+    color: $color-primary;
+  }
+  .header-checkbox:checked + .header-switch &-left {
+    color: $color-primary;
+  }
+  .header-checkbox:checked + .header-switch &-right {
+    color: #FFF;
+  }
+}
+// 定义切换开关的文字大小、颜色以及颜色变化
+
 
 .caption-body {
   color: #FFF;
