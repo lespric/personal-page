@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+
+@import 
+  "grid-mixins";
+  // 引用同目录下的混合宏文件
+@import 
+  "../abstracts/mixins",
+  "../abstracts/variables";
+  // 引用abstracts目录下的变量和混合宏文件
+
+
+$grid-column: 12!default;
+// 声明栅格系统的总列数
+$grid-gutter-width: 30px!default;
+// 声明栅格系统的水槽宽度
+$container-mw: auto 540px 720px 960px 1140px;
+// 声明容器在各个分辨率范围内的最大宽度的列表
+
+$grid-gutter-width: 0;
+// 声明水槽宽度为0;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 ($grid-gutter-width / 2);
+  @each $bp-key in $bp-keys-list {
+    @include respond-to($bp-key) {
+      & {
+        $i: index($bp-keys-list, $bp-key);
+        max-width: nth($container-mw, $i);
+      }
+    }
+  }
+  &-fluid {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+// 定义容器在各个分辨率范围内的最大宽度以及流体布局时的不限宽度
+
+.row {
+  @include row;
+  margin: 0 (-$grid-gutter-width / 2);
+  @at-root .no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+// 定义行的布局
+
+%col {
+  position: relative;
+  width: 100%;
+  padding: 0 ($grid-gutter-width / 2);
+} // 声明col通用样式的占位符
+@for $i from 1 through $grid-column {
+  @each $bp-key in $bp-keys-list {
+    .col {
+      &,
+      &-#{$i},
+      &-auto,
+      &-#{$bp-key}-#{$i} {
+        @extend %col;
+      }
+    }
+  }
+}
+// 定义所有类型的col的宽度
+
+.col {
+  & {
+    @include col-bp;
+  }
+
+  &-auto {
+    @include col-auto;
+  }
+}
+// 定义在所有分辨率下的无后缀及auto时的自动布局
+
+@for $i from 1 through $grid-column {
+  .col-#{$i} {
+    $max-width: ($i / $grid-column) * 100%;
+    -ms-flex: 0 0 $max-width;
+    flex: 0 0 $max-width;
+    max-width: $max-width;
+  }
+}
+// 定义在所有分辨率下共用的栅格系统
+
+@each $bp-key in $bp-keys-list {
+  @include respond-to($bp-key) {
+    .col {
+      &-#{$bp-key} {
+        @include col-bp;
+      }
+      &-#{$bp-key}-auto {
+        @include col-auto;
+      }
+      @for $i from 1 through $grid-column {
+        &-#{$bp-key}-#{$i} {
+          $max-width: ($i / $grid-column) * 100%;
+          -ms-flex: 0 0 $max-width;
+          flex: 0 0 $max-width;
+          max-width: $max-width;
+        }
+      }
+    }
+  }
+}
+// 定义在各个分辨率下各自的栅格系统

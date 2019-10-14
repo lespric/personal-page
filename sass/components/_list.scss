@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@import "../base/colors";
+
+.list-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  padding-bottom: 8.4em;
+
+  background-color: #fff;
+}
+// 定义列表组的样式
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 0 3.2em;
+  border-bottom: 0.1em solid $color-secondary;
+
+  &:not(:last-child) {
+    height: 5em;
+  }
+  &:last-child {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    & .list-item-title {
+      align-self: flex-start;
+    }
+  }
+}
+// 定义列表组内每个列表的样式
+.list-group-title {
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.875em;
+
+    height: 0.875em;
+    width: 0.125em;
+
+    background-color: $color-primary;
+  }
+}
+// 定义列表组的标题前的竖线
+
+.list-item-title {
+  margin-right: 1.75em;
+}
+// 定义列表组的每个列表与文本的间距
+
+.list-item-label {
+   margin-right: 1em;
+   display: flex;
+   align-items: center;
+   &::before {
+       content: "";
+       display: inline-block;
+
+       width: 1em;
+       height: 1em;
+
+       background: url(../img/label@3x.png) no-repeat left center;
+       background-size: 0.75em 0.75em;
+   }
+}
+// 定义列表组内的标签列表的标签图标

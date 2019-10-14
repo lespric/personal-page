@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@import "colors";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+// 定义所有类型元素都是传统IE盒模型
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+// 定义所有div的结构化标签都是块状元素
+
+body {
+  background-color: $color-bg;
+}
+// 重置body标签的默认背景色
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+// 重置按钮的默认样式
+
+textarea:focus {
+  border: none;
+  outline: none;
+}
+// 重置输入多行文本框的默认样式
+
+.list-no-indent {
+  padding-left: 1em
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+// 重新定义列表的默认样式

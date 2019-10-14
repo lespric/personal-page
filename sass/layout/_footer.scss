@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    padding: 2em;
+    
+    display: flex;
+    width: 100%;
+}
+// 定义底部的宽和边距值，并固定在底部

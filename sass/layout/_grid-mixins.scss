@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@mixin col-bp {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+// 声明各个断点的col无数字后缀的平分空间效果
+
+@mixin col-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+// 声明各个断点的col-auto的自动填充效果
+
+@mixin row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+// 声明行的通用样式

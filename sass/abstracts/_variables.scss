@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+$breakpoints: (
+  "xs": (max-width: 576px),
+  /* Extra small devices (portrait phones, less than 576px) */ 
+  "sm": (min-width: 576px),
+  /* Small devices (landscape phones, 576px and up) */ 
+  "md": (min-width: 768px),
+  /* Medium devices (tablets, 768px and up) */ 
+  "lg": (min-width: 992px),
+  /* Large devices (desktops, 992px and up) */ 
+  "xl": (min-width: 1200px),
+  /* Extra large devices (large desktops, 1200px and up) */
+);
+// 声明在不同设备下的通用断点地图
+
+$bp-keys-list: map-keys($breakpoints);
+// 声明断点名称的列表

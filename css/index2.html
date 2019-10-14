@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Personal page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="email=no" />
+    <link rel="stylesheet" href="index2.css" />
+  </head>
+  <body>
+    <header>
+      <button class="back" type="button" οnclick="javascript:history.back()"></button>
+      <span class="title">个人主页</span>
+    </header>
+
+    <main>
+      <article class="top_half">
+        <section class="bg_img">
+          <div class="img1"></div>
+          <div class="img2"></div>
+          <div class="img3"></div>
+        </section>
+        <section class="information">
+          <span class="head"></span>
+          <div class="profile">
+            <div class="account">
+              <span class="name">高素雅</span>
+              <span class="age">51岁</span>
+            </div>
+            <div class="address">
+              <p class="icon"></p>
+              <span class="text">北京.通州.果园</span>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article class="bottom_half">
+        <section class="work_subhead">
+          <span></span>
+          <span>专业技能</span>
+        </section>
+
+        <section class="work_label">
+          <div class="tag1">
+            <p class="icon"></p>
+            <span>住家</span>
+          </div>
+          <div class="tag2">
+            <p class="icon"></p>
+            <span>不含餐</span>
+          </div>
+        </section>
+
+        <section class="work_years">
+          <span>从业年限</span>
+          <span>0~3年</span>
+        </section>
+
+        <section class="work_time">
+          <span>工作时间</span>
+          <span>全天</span>
+        </section>
+
+        <section class="work_price">
+          <span>服务价格</span>
+          <span>25元/小时</span>
+        </section>
+
+        <section class="introduction">
+          <span>自我介绍</span>
+          <span>
+                可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富，如下：</br>
+                <ol>    
+                    <li>能够正确使用家用电器并进行日常的清理和维护；
+                    <li>能按要求独立购买日常生活用品和食品；
+                    <li>懂得居室的日常整洁与布置；
+                    <li>会洗烫和保管一般的衣物；
+                    <li>陪护儿童、老人、病人外出，并能处理有关事宜；
+                    <li>能协助雇主做花、鸟、虫、鱼及宠物的养护；
+                    <li>按地区和雇主的习惯制作家常饭菜。
+                </ol> 
+          </span>
+        </section>
+      </article>
+       
+      <aside id="written">
+          <form action="save.php" method="post" name="message">
+              <div class="operating">
+                  <button class="close" type="button" name="close">关闭</button>
+                  <button class="finish" type="submit" name="finish">完成</button>
+              </div>
+              <div class="writing">
+                  <textarea class=content name="content" placeholder="留言:" autofocus required></textarea>
+                  <span class="num">0/400</span>
+              </div>
+            </form>
+      </aside>
+    </main>
+
+      <footer>
+        <section class="message">
+          <button type="button" name="write" onclick="openwindow()">留言</button>
+        </section>
+        <section class="phone">
+          <button type="button" name="call">电话联系</button>
+        </section>
+      </footer>
+    <script src="index.js" async defer></script>
+  </body>
+</html>

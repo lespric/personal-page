@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+.carousel {
+  position: relative;
+  @at-root &.pointer-event {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+  }
+}
+// 定义轮播图的容器和用户操作的响应情况
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.carousel-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+// 定义每个轮播页面的布局属性
+
+.carousel-item {
+  position: relative;
+  margin-right: -100%;
+
+  display: none;
+  float: left;
+  width: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  
+  & img {
+    display: block;
+    width: 100%;
+    background-size: cover;
+  }
+  &.active,
+  &-next,
+  &-prev {
+    display: block;
+  }
+}
+// 定义每个轮播页面的内容的布局、显隐和过渡动画效果
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: none;
+  }
+}
+// 当用户启用Reduced Motion选项时，便会用该媒体查询样式替代用户的体验，即无过渡动画效果
+
+.carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+// 定义轮播图切换时左滑、右滑的平移变化
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 4%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  & .caption-img {
+    width: 8.4em;
+    height: 8.4em;
+
+    background: url(../img/head@3x.png) no-repeat;
+    background-size: cover;
+  }
+  & .caption-body {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.caption-account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.caption-address {
+  @extend .caption-account;
+  margin-top: 1.3em;
+  & .icon {
+    width: 1.4em;
+    height: 1.2em;
+
+    background: url(../img/location@3x.png) no-repeat;
+    background-size: 0.9em 1.2em;
+  }
+}
+// 定义轮播图的页面文本的布局
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+  z-index: 1;
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+  z-index: 0;
+  opacity: 0;
+  transition: 0s 0.6s opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-fade .active.carousel-item-left,
+  .carousel-fade .active.carousel-item-right {
+    transition: none;
+  }
+}
+// 定义轮播图应用切换时过渡效果为淡入淡出的效果
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    transition: none;
+  }
+}
+// 定义轮播图切换页面的轮播控制按钮
+
+.carousel-indicators {
+  position: absolute;
+  display: flex;
+  list-style: none;
+
+  @at-root & li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    cursor: pointer;
+  }
+  @at-root & .active {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-indicators li {
+    transition: none;
+  }
+}
+// 定义轮播图的轮播指示器的样式
+
+
+
+

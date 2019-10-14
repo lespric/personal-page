@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+@import
+  "../abstracts/variables",
+  "../abstracts/mixins";
+
+@import "../base/colors";
+
+@font-face {
+  font-family: "STHeitiSC-Light";
+  src: url("../fonts/STHeitiSC-Light/stheitisc.otf")
+      format("opentype"),
+    url("../fonts/STHeitiSC-Light/stheitisc.woff") format("woff"),
+    url("../fonts/STHeitiSC-Light/stheitisc.ttf")
+      format("truetype"),
+    url("../fonts/STHeitiSC-Light/stheitisc.eot")
+      format("embedded-opentype"),
+    url("../fonts/STHeitiSC-Light/stheitisc.svg") format("svg");
+
+  font-family: "HiraginoSansGBW3";
+  src: url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.otf")
+      format("opentype"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff2")
+      format("woff2"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff")
+      format("woff"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.ttf")
+      format("truetype"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.eot")
+      format("embedded-opentype"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.svg")
+      format("svg");
+} /* 引用设计字体 */
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+// 定义全局字体、行高以及高光颜色
+
+body {
+  font: {
+    family: "STHeitiSC-Light", "Microsoft YaHei", sans-serif;
+    size: 0.625rem;
+    weight: 500;
+  }
+  line-height: 1.5;
+}
+// 定义body标签下的全局字体样式
+
+@each $font-bp in $bp-keys-list {
+    body {
+        @include respond-to($font-bp) {
+            $i: index($bp-keys-list, $font-bp);
+            font-size: 0.625rem + 0.125 * ($i - 1);
+        }
+    }
+} 
+// 定义body标签在不同断点下的字体大小
+
+.header {
+  color: #FFF;
+  &-title-font {
+    font-size: 1.8em;
+    text-align: center;
+  }
+  &-btn-font {
+    font-size: 1.6em;
+    color: #FFF;
+  }
+}
+// 定义导航栏的字体大小和颜色
+
+
+.caption-body {
+  color: #FFF;
+  line-height: 1;
+  & .name {
+    font-size: 1.8em;
+  }
+  & .age {
+    font-size: 1.4em;
+  }
+  & .text {
+    font-size: 1.2em;
+  }
+}
+// 定义轮播图的页面文本的字体样式
+
+.group-font-title {
+    color: $font-text;
+    font-size: 1.6em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.item-font {
+  &-title {
+    font-size: 1.6em;
+    color: $font-title;
+    white-space: nowrap;
+  }
+  &-text {
+    font-size: 1.6em;
+    color: $font-text;
+  }
+  &-list {
+    font-size: 1.2em;
+  }
+  &-info {
+    font-family:"HiraginoSansGBW3", sans-serif;
+    color: $color-info;
+  }
+}
+// 定义列表组内的各个列表的字体样式
+
+.modal {
+  &-header-font {
+  font-size: 1.6em;
+  color: #EA8989;
+  }
+  &-body-font {
+    font-size: 1.6em;
+    &::-webkit-input-placeholder {
+      color: #b0b0b0;
+    }
+    &:-moz-placeholder {
+      color: #b0b0b0;
+    }
+    &::-moz-placeholder {
+      color: #b0b0b0;
+    }
+    &:-ms-input-placeholder {
+      color: #b0b0b0;
+    }
+  }
+  &-footer-font {
+    font-size: 1.4em;
+    color: #B0B0B0;
+  }
+}
+// 定义模态框的字体样式
+
+.footer-font {
+  font: {
+    size: 1.6em;
+    weight: 500;
+  }
+  &-left {
+    @extend .footer-font;
+    color: $color-primary;
+  }
+  &-right {
+    @extend .footer-font;
+    color: #FFF;
+  }
+}
+// 定义底部的按钮文字大小和颜色
+
+
+
