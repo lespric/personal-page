@@ -43,3 +43,8 @@ textarea:focus {
   list-style: none;
 }
 // 重新定义列表的默认样式
+
+a,
+a:focus {
+  text-decoration: none;
+}

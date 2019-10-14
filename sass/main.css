@@ -261,6 +261,10 @@ textarea:focus {
   padding-left: 0;
   list-style: none; }
 
+a,
+a:focus {
+  text-decoration: none; }
+
 @font-face {
   font-family: "STHeitiSC-Light";
   src: url("../fonts/STHeitiSC-Light/stheitisc.otf") format("opentype"), url("../fonts/STHeitiSC-Light/stheitisc.woff") format("woff"), url("../fonts/STHeitiSC-Light/stheitisc.ttf") format("truetype"), url("../fonts/STHeitiSC-Light/stheitisc.eot") format("embedded-opentype"), url("../fonts/STHeitiSC-Light/stheitisc.svg") format("svg");
@@ -888,6 +892,7 @@ body {
   padding: 0 1em;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 3.6em;
   height: 100%; }
   .header-btn-left {
