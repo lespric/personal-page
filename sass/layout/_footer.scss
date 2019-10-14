@@ -3,9 +3,11 @@
 .footer {
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     padding: 2em;
     
     display: flex;
     width: 100%;
 }
-// 定义底部的宽和边距值，并固定在底部
+// 定义底部的宽和边距值，并固定在底部，并达到水平居中

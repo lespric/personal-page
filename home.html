@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Home</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <link rel="stylesheet" href="../personal-page/sass/main.css" />
+    <!--index.css对index.html文件的样式设置-->
+    <link rel="stylesheet" href="../home/src/iosSelect.css" />
+    <!--iosSelect.css对弹出页和选择器的样式进行设置-->
+  </head>
+
+  <body>
+    <header class="header">
+      <button type="button" class="header-btn-right header-map"></button>
+      <input type="checkbox" id="find" onclick="window.location.href='#top'" />
+      <!--点击时页面返回到顶部-->
+      <label for="find">
+        <span class="button_bg"></span>
+        <span class="text_left">找雇主</span>
+        <span class="text_right">找护工</span>
+      </label>
+      <!--为能关联到主要内容的页面切换，需其父元素为同一个-->
+    </header>
+
+    <main class="main">
+      <nav>
+        <ul>
+          <li class="sel_left" id="address">
+            <input
+              type="hideen"
+              name="address_id"
+              id="addressId"
+              placeholder="所在地"
+              value=""
+              readonly
+            />
+          </li>
+
+          <li class="sel_middle" id="term">
+            <input
+              type="hideen"
+              name="term_id"
+              id="termId"
+              placeholder="食宿"
+              value=""
+              readonly
+            />
+          </li>
+
+          <li class="sel_right" id="illness">
+            <input
+              type="hideen"
+              name="illness_id"
+              id="illnessId"
+              placeholder="病人情况"
+              value=""
+              readonly
+            />
+          </li>
+        </ul>
+      </nav>
+
+      <article class="find_left">
+        <!--找雇主页面-->
+        <section class="list_1">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-15</span>
+            <span>40元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+
+        <section class="list_2">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-10</span>
+            <span>40元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+
+        <section class="list_3">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-5</span>
+            <span>40元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+
+        <section class="list_4">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-15</span>
+            <span>30元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+
+        <section class="list_5">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-10</span>
+            <span>30元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+
+        <section class="list_6">
+          <div class="top">
+            <div class="icon"></div>
+            <span>包食.包住</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-1 至 2015-7-15</span>
+            <span>20元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>能自理</span>
+          </div>
+        </section>
+      </article>
+
+      <article class="find_right">
+        <!--找护工页面-->
+        <section
+          class="list_1"
+          onclick="javascrtpt:window.location.href='https://lespric.github.io/personal-page/'"
+        >
+          <!--点击打开到个人页面-->
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>25元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+
+        <section class="list_2">
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>35元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+
+        <section class="list_3">
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>45元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+
+        <section class="list_4">
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>45元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+
+        <section class="list_5">
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>45元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+
+        <section class="list_6">
+          <div class="top">
+            <div class="icon"></div>
+            <span>服务日期</span>
+          </div>
+          <div class="middle">
+            <span>2015-7-5 至 2015-7-12</span>
+            <span>55元/小时</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="bottom">
+            <div class="icon"></div>
+            <span>北京.通州.果园</span>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <button class="home">
+        <div class="icon"></div>
+        <span>首页</span>
+      </button>
+
+      <button type="button" class="rudder"></button>
+
+      <button class="user">
+        <div class="icon"></div>
+        <span>我的</span>
+      </button>
+    </footer>
+
+    <script src="index.js"></script>
+    <!--index.js储存各个选项内容作为数组-->
+    <script src="../home/src/iosSelect.js" async defer></script>
+    <!--iosSelect.js对弹出页和选择框进行动态设置-->
+
+    <script type="text/javascript">
+      var addressDom = document.querySelector("#address"); // 绑定一个点击触发元素
+      var addressIdDom = document.querySelector("#addressId"); // 绑定一个存储结果的输入框元素
+      addressDom.addEventListener("click", function() {
+        // 添加监听的点击事件
+        var addressId = addressDom.dataset["id"]; // 获取index.js的数组的id属性值
+        var addressName = addressDom.dataset["value"]; // 获取index.js的数组的value属性值
+
+        var addressSelect = new IosSelect(
+          1, // 第一个参数为级联层级，演示为1
+          [address_data], // index.js里的对应数组名
+          {
+            container: ".container", // 容器class
+            title: "", // 标题
+            itemHeight: 40, // 每个元素的高度
+            itemShowCount: 3, // 每一列显示元素个数，超出将隐藏
+            oneLevelId: addressId, // 第一级默认值
+            callback: function(selectOneObj) {
+              // 用户确认选择后的回调函数,返回选择值
+              addressIdDom.value = selectOneObj.id;
+              addressDom.innerHTML = selectOneObj.value;
+              addressDom.dataset["id"] = selectOneObj.id;
+              addressDom.dataset["value"] = selectOneObj.value;
+            },
+            fallback: function() {
+              console.log(1);
+            },
+            maskCallback: function() {
+              console.log(2);
+            }
+          }
+        );
+      });
+
+      var termDom = document.querySelector("#term"); // 绑定一个点击触发元素
+      var termIdDom = document.querySelector("#termId"); // 绑定一个存储结果的输入框元素
+      termDom.addEventListener("click", function() {
+        // 添加监听的点击事件
+        var termId = termDom.dataset["id"]; // 获取index.js的数组的id属性值
+        var termName = termDom.dataset["value"]; // 获取index.js的数组的value属性值
+
+        var termSelect = new IosSelect(
+          1, // 第一个参数为级联层级，演示为1
+          [term_data], // index.js里的对应数组名
+          {
+            container: ".container", // 容器class
+            title: "", // 标题
+            itemHeight: 40, // 每个元素的高度
+            itemShowCount: 3, // 每一列显示元素个数，超出将隐藏
+            oneLevelId: termId, // 第一级默认值
+            callback: function(selectOneObj) {
+              // 用户确认选择后的回调函数，返回选择值
+              termIdDom.value = selectOneObj.id;
+              termDom.innerHTML = selectOneObj.value;
+              termDom.dataset["id"] = selectOneObj.id;
+              termDom.dataset["value"] = selectOneObj.value;
+            },
+            fallback: function() {
+              console.log(1);
+            },
+            maskCallback: function() {
+              console.log(2);
+            }
+          }
+        );
+      });
+
+      var illnessDom = document.querySelector("#illness"); // 绑定一个点击触发元素
+      var illnessIdDom = document.querySelector("#illnessId"); // 绑定一个存储结果的输入框元素
+      illnessDom.addEventListener("click", function() {
+        // 添加监听的点击事件
+        var illnessId = illnessDom.dataset["id"]; // 获取index.js的数组的id属性值
+        var illnessName = illnessDom.dataset["value"]; // 获取index.js的数组的value属性值
+
+        var illnessSelect = new IosSelect(
+          1, // 第一个参数为级联层级，演示为1
+          [illness_data], // index.js里的对应数组名
+          {
+            container: ".container", // 容器class
+            title: "", // 标题
+            itemHeight: 40, // 每个元素的高度
+            itemShowCount: 3, // 每一列显示元素个数，超出将隐藏
+            oneLevelId: illnessId, // 第一级默认值
+            callback: function(selectOneObj) {
+              // 用户确认选择后的回调函数，返回选择值
+              illnessIdDom.value = selectOneObj.id;
+              illnessDom.innerHTML = selectOneObj.value;
+              illnessDom.dataset["id"] = selectOneObj.id;
+              illnessDom.dataset["value"] = selectOneObj.value;
+            },
+            fallback: function() {
+              console.log(1);
+            },
+            maskCallback: function() {
+              console.log(2);
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

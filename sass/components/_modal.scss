@@ -27,7 +27,7 @@
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 6.4em 0;
+  margin-top: 6.4em;
   pointer-events: none;
 }
 // 定义模态框的包含块布局
@@ -197,36 +197,36 @@
 }
 // 定义模态框在长文本时的浏览情况
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 500px;
-    margin: 1.75rem auto;
-  }
-  .modal-dialog-scrollable {
-    max-height: calc(100% - 3.5rem);
-  }
-  .modal-dialog-scrollable .modal-content {
-    max-height: calc(100vh - 3.5rem);
-  }
-  .modal-dialog-centered {
-    min-height: calc(100% - 3.5rem);
-  }
-  .modal-dialog-centered::before {
-    height: calc(100vh - 3.5rem);
-  }
-  .modal-sm {
-    max-width: 300px;
-  }
-}
-@media (min-width: 992px) {
-  .modal-lg,
-  .modal-xl {
-    max-width: 800px;
-  }
-}
-@media (min-width: 1200px) {
-  .modal-xl {
-    max-width: 1140px;
-  }
-}
-// 定义在不同的分辨率下的最大宽度
+// @media (min-width: 576px) {
+//   .modal-dialog {
+//     max-width: 500px;
+//     margin: 1.75rem auto;
+//   }
+//   .modal-dialog-scrollable {
+//     max-height: calc(100% - 3.5rem);
+//   }
+//   .modal-dialog-scrollable .modal-content {
+//     max-height: calc(100vh - 3.5rem);
+//   }
+//   .modal-dialog-centered {
+//     min-height: calc(100% - 3.5rem);
+//   }
+//   .modal-dialog-centered::before {
+//     height: calc(100vh - 3.5rem);
+//   }
+//   .modal-sm {
+//     max-width: 300px;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .modal-lg,
+//   .modal-xl {
+//     max-width: 800px;
+//   }
+// }
+// @media (min-width: 1200px) {
+//   .modal-xl {
+//     max-width: 1140px;
+//   }
+// }
+// // 定义在不同的分辨率下的最大宽度

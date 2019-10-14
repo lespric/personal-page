@@ -13,6 +13,9 @@
     &-left {
         left: 0;
     }
+    &-right {
+        right: 0;
+    }
     &:hover {
         background-color: darken($color-primary, 20%);
     }
@@ -30,6 +33,22 @@
     }
 }
 // 定义标题栏的左端按钮的边距和大小
+
+
+
+.header {
+    &-switch {
+        display: none;
+
+    }
+    &-map {
+        width: 5.1em;
+        height: 4.4em;
+
+        background: url(../img2/map@2x.png) no-repeat;
+        background-size: cover;
+    }
+}
 
 
 .footer-btn {
