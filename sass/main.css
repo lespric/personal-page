@@ -914,7 +914,8 @@ body {
   width: 14.3em;
   height: 3.5em;
   background-color: #55A8B3;
-  border-radius: 0.5em; }
+  border-radius: 0.5em;
+  cursor: pointer; }
   .header-switch-bg {
     position: absolute;
     right: 0;
