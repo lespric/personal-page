@@ -27,6 +27,7 @@ sass/
 |   |– _main.scss         # Main
 |   |– _header.scss       # Header
 |   |– _footer.scss       # Footer
+|   |– _nav.scss          # Navbar
 |
 |– pages/
 |   |– _home.scss         # Home specific styles
@@ -60,7 +61,8 @@ sass/
   "layout/grid",
   "layout/header",
   "layout/main",
-  "layout/footer";
+  "layout/footer",
+  "layout/nav";
 
 @import
   "components/buttons",

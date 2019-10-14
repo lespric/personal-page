@@ -55,18 +55,85 @@
 // 定义列表组的每个列表与文本的间距
 
 .list-item-label {
-   margin-right: 1em;
-   display: flex;
-   align-items: center;
-   &::before {
-       content: "";
-       display: inline-block;
+  margin-right: 1em;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    display: inline-block;
 
-       width: 1em;
-       height: 1em;
+    width: 1em;
+    height: 1em;
 
-       background: url(../img/label@3x.png) no-repeat left center;
-       background-size: 0.75em 0.75em;
-   }
+    background: url(../img/label@3x.png) no-repeat left center;
+    background-size: 0.75em 0.75em;
+  }
 }
 // 定义列表组内的标签列表的标签图标
+
+.home-list-group {
+    padding-bottom: 5em;
+    background-color: #FFF;
+}
+.home-list-group-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.4em;
+
+    height: 9em;
+    border-bottom: 0.1em solid #E1E5E7;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#FFF, 10%);
+    }
+
+    & .item-top {
+      display: flex;
+      align-items: center;
+
+      &-icon {
+        margin-right: 0.9em;
+        width: 1.2em;
+        height: 1.2em;
+      }
+    }
+
+    & .item-middle {
+      @extend .item-top;
+
+      &-text {
+        margin-left: 1.5em;
+      }
+      &-text-info {
+        margin-left: auto;
+        margin-right: 0;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          margin-left: 1em;
+
+          width: 1em;
+          height: 1em;
+          vertical-align: middle;
+
+          border-top: 0.2em solid $color-primary;
+          border-right: 0.2em solid $color-primary;
+
+          -webkit-transform: rotate(45deg);         
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    & .item-bottom {
+      @extend .item-top;
+
+      &-icon {
+        @extend .item-top-icon;
+      }
+    }
+}
+// 定义首页列表组的每个列表各行的布局

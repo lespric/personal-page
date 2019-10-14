@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 4em;
+
+  background-color: #FFF;
+  border-bottom: 0.1em solid #E1E5E7;
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+// 定义导航栏的布局
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+
+  & input {
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+  }
+  
+  &:not(:last-child) {
+    border-right: 0.0625rem solid #E1E5E7;
+  }
+}
+// 定义导航栏每个选项的样式

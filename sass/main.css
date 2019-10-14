@@ -25,6 +25,7 @@ sass/
 |   |– _main.scss         # Main
 |   |– _header.scss       # Header
 |   |– _footer.scss       # Footer
+|   |– _nav.scss          # Navbar
 |
 |– pages/
 |   |– _home.scss         # Home specific styles
@@ -245,9 +246,13 @@ button {
   outline: none;
   border: none; }
 
+input,
+input:focus,
+textarea,
 textarea:focus {
   border: none;
-  outline: none; }
+  outline: none;
+  background: none; }
 
 .list-no-indent {
   padding-left: 1em; }
@@ -367,6 +372,40 @@ body {
     color: #5FC0CD; }
   .footer-font-right {
     color: #FFF; }
+
+.home-footer .font-left {
+  font-size: 1em;
+  color: #5FC0CD; }
+.home-footer .font-right {
+  font-size: 1em;
+  color: #999; }
+
+.navbar .nav-font {
+  font-size: 1.4em;
+  color: #666;
+  text-align: center; }
+.navbar-item-font {
+  font-size: 1em;
+  text-align: center; }
+  .navbar-item-font::-webkit-input-placeholder {
+    color: #999; }
+  .navbar-item-font:-moz-placeholder {
+    color: #999; }
+  .navbar-item-font::-moz-placeholder {
+    color: #999; }
+  .navbar-item-font:-ms-input-placeholder {
+    color: #999; }
+
+.home-list-group .item-top-text, .home-list-group .item-bottom-text {
+  font-size: 1.2em;
+  color: #999; }
+.home-list-group .item-middle-text {
+  font-size: 1.4em;
+  color: #333; }
+  .home-list-group .item-middle-text-info {
+    font-size: 1.5em;
+    font-family: "HiraginoSansGBW3", sans-serif;
+    color: #E26163; }
 
 .container {
   width: 100%;
@@ -811,6 +850,39 @@ body {
   justify-content: space-between;
   background-color: #F8FAFB; }
 
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 4em;
+  background-color: #FFF;
+  border-bottom: 0.1em solid #E1E5E7; }
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%; }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  cursor: pointer; }
+  .nav-item input {
+    width: 100%;
+    height: 100%; }
+    .nav-item input::after {
+      display: inline-block;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent; }
+  .nav-item:not(:last-child) {
+    border-right: 0.0625rem solid #E1E5E7; }
+
 .header-btn, .header-btn-left, .header-btn-right {
   position: absolute;
   padding: 0 1em;
@@ -1074,6 +1146,44 @@ body {
     height: 1em;
     background: url(../img/label@3x.png) no-repeat left center;
     background-size: 0.75em 0.75em; }
+
+.home-list-group {
+  padding-bottom: 5em;
+  background-color: #FFF; }
+
+.home-list-group-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.4em;
+  height: 9em;
+  border-bottom: 0.1em solid #E1E5E7;
+  cursor: pointer; }
+  .home-list-group-item:hover {
+    background-color: #e6e6e6; }
+  .home-list-group-item .item-top, .home-list-group-item .item-middle, .home-list-group-item .item-bottom {
+    display: flex;
+    align-items: center; }
+    .home-list-group-item .item-top-icon, .home-list-group-item .item-bottom-icon {
+      margin-right: 0.9em;
+      width: 1.2em;
+      height: 1.2em; }
+  .home-list-group-item .item-middle-text {
+    margin-left: 1.5em; }
+  .home-list-group-item .item-middle-text-info {
+    margin-left: auto;
+    margin-right: 0; }
+    .home-list-group-item .item-middle-text-info::after {
+      content: "";
+      display: inline-block;
+      margin-left: 1em;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      border-top: 0.2em solid #5FC0CD;
+      border-right: 0.2em solid #5FC0CD;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg); }
 
 .modal-open {
   overflow: hidden; }

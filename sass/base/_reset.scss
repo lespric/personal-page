@@ -25,10 +25,13 @@ button {
   border: none;
 }
 // 重置按钮的默认样式
-
+input,
+input:focus,
+textarea,
 textarea:focus {
   border: none;
   outline: none;
+  background: none;
 }
 // 重置输入多行文本框的默认样式
 

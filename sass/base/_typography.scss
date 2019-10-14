@@ -176,5 +176,63 @@ body {
 }
 // 定义底部的按钮文字大小和颜色
 
+.home-footer {
+  & .font-left {
+    font-size: 1em;
+    color: $color-primary;
+  }
+  & .font-right {
+    font-size: 1em;
+    color: #999;
+  }
+}
+// 定义首页底部的标签栏文字大小颜色
 
+.navbar {
+  .nav-font {
+    font-size: 1.4em;
+    color: #666;
+    text-align: center; 
+  }
+  &-item-font {
+    font-size: 1em;
+    text-align: center;
+
+    &::-webkit-input-placeholder {
+      color: #999;
+    }
+    &:-moz-placeholder {
+      color: #999;
+    }
+    &::-moz-placeholder {
+      color: #999;
+    }
+    &:-ms-input-placeholder {
+      color: #999;
+    }
+  }
+}
+// 定义导航栏的文字样式
+
+.home-list-group {
+  & .item-top-text {
+    font-size: 1.2em;
+    color: #999;
+  }
+
+  & .item-middle-text {
+    font-size: 1.4em;
+    color: #333;
+
+    &-info {
+      font-size: 1.5em;
+      font-family:"HiraginoSansGBW3", sans-serif;
+      color: $color-info;
+    }
+  }
+
+  & .item-bottom-text {
+   @extend .item-top-text;
+  }
+}
 
