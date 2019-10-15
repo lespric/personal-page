@@ -17,7 +17,6 @@ sass/
 |– components/
 |   |– _buttons.scss      # Buttons
 |   |– _carousel.scss     # Carousel
-|   |– _dropdown.scss     # Dropdown
 |   |– _list.scss         # List-group
 |   |– _modal.scss        # Modal
 |   |– _forms.scss        # Forms
@@ -69,8 +68,7 @@ sass/
   "components/carousel",
   "components/list",
   "components/modal",
-  "components/forms",
-  "components/dropdown";
+  "components/forms";
 
 @import
   "pages/home";
