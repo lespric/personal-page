@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+.home-inner {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+
+  transform-style: preserve-3d;
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+// 定义首页内容的容器的布局和清除浮动，以及开启3d变换
+
+.home-page {
+  display: block;
+  float: left;
+  margin-right: -100%;
+
+  width: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  transition: -webkit-transform 0.4s linear;
+  transition: transform 0.4s linear;
+
+  &-front {
+    @extend .home-page;
+    transform-origin: left center;
+  }
+  &-back {
+    @extend .home-page;
+    height: 60em; // 只是作为第二页面的高度方便展示
+    transform-origin: right center;
+    transform: translateX(-100%) rotateY(-180deg);
+  } // 使需要隐藏的元素翻转为背面，从而隐藏
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page {
+    transition: none;
+  }
+}
+// 定义首页内容的页面的布局和过渡动画效果

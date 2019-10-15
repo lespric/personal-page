@@ -1,12 +1,13 @@
 @charset "utf-8";
 
 .navbar {
+  margin-top: 4.4em;
   position: relative;
   width: 100%;
   height: 4em;
 
-  background-color: #FFF;
-  border-bottom: 0.1em solid #E1E5E7;
+  background-color: #fff;
+  border-bottom: 0.1em solid #e1e5e7;
 
   &-nav {
     display: flex;
@@ -19,29 +20,31 @@
 .nav-item {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
   height: 100%;
-  cursor: pointer;
 
   & input {
     width: 100%;
     height: 100%;
+    cursor: pointer;
 
-    &::after {
-      display: inline-block;
-      margin-left: 0.255em;
-      vertical-align: 0.255em;
-      content: "";
-      border-top: 0.3em solid;
-      border-right: 0.3em solid transparent;
-      border-bottom: 0;
-      border-left: 0.3em solid transparent;
+    &:hover {
+      background-color: darken(#fff, 10%);
     }
   }
-  
+  &::after {
+    position: absolute;
+    right: 1em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+
   &:not(:last-child) {
-    border-right: 0.0625rem solid #E1E5E7;
+    border-right: 0.0625rem solid #e1e5e7;
   }
 }
 // 定义导航栏每个选项的样式

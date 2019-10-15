@@ -7,6 +7,7 @@ sass/
 |– abstracts/
 |   |– _variables.scss    # Sass Variables
 |   |– _mixins.scss       # Sass Mixins
+|   |– _placeholder.scss  # Sass Placeholder
 |
 |– base/
 |   |– _reset.scss        # Reset
@@ -31,8 +32,6 @@ sass/
 |
 |– pages/
 |   |– _home.scss         # Home specific styles
-|   |– _contact.scss      # Contact specific styles
-|   …                     # Etc.
 |
 |– themes/
 |   |– _theme.scss        # Default theme
@@ -47,7 +46,8 @@ sass/
 
 @import
   "abstracts/mixins",
-  "abstracts/variables";
+  "abstracts/variables",
+  "abstracts/placeholder";
 
 @import
   "vendors/normalize";
@@ -69,4 +69,8 @@ sass/
   "components/carousel",
   "components/list",
   "components/modal",
-  "components/forms";
+  "components/forms",
+  "components/dropdown";
+
+@import
+  "pages/home";

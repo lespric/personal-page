@@ -2,146 +2,167 @@
 
 @import "../base/colors";
 
+@import "../pages/home";
+
 .header-btn {
-    position: absolute;
-    padding: 0 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  padding: 0 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 3.6em;
-    height: 100%;
-    &-left {
-        @extend .header-btn;
-        left: 0;
-    }
-    &-right {
-        @extend .header-btn;
-        right: 0;
-    }
-    &:hover {
-        background-color: darken($color-primary, 20%);
-    }
-    &-left::before {
-        content: "";
+  width: 3.6em;
+  height: 100%;
+  &-left {
+    @extend .header-btn;
+    left: 0;
+  }
+  &-right {
+    @extend .header-btn;
+    right: 0;
+  }
+  &:hover {
+    background-color: darken($color-primary, 20%);
+  }
+  &-left::before {
+    content: "";
 
-        width: 1em;
-        height: 1em;
+    width: 1em;
+    height: 1em;
 
-        border-top: 0.2em solid #FFF;
-        border-left: 0.2em solid #FFF;
+    border-top: 0.2em solid #fff;
+    border-left: 0.2em solid #fff;
 
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 }
 // 定义标题栏的左端按钮的边距和大小
 
 .header {
-    &-checkbox {
-        display: none;
+  &-switch {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 14.3em;
+    height: 3.5em;
+
+    background-color: #55a8b3;
+    border-radius: 0.5em;
+    cursor: pointer;
+
+    &-bg {
+      position: absolute;
+      right: 0;
+
+      width: 7.2em;
+      height: 3.5em;
+      background-color: #fff;
+      border-radius: 0.5em;
+
+      transition: right 0.2s linear;
     }
-    &-switch {
-        position: relative;
-        
-        display: flex;
-        align-items: center;
-        width: 14.3em;
-        height: 3.5em;
+    &-left,
+    &-right {
+      z-index: 1;
+      width: 50%;
+      text-align: center;
 
-        background-color: #55A8B3;
-        border-radius: 0.5em;
-        cursor: pointer;
-        
-        &-bg {
-            position: absolute;
-            right: 0;
-
-            width: 7.2em;
-            height: 3.5em;
-            background-color: #FFF;
-            border-radius: 0.5em;
-
-            transition: right 0.2s linear;
-        }
-        &-left,
-        &-right {
-           z-index: 1;
-           width: 50%;
-           text-align: center;
-
-           transition: color 0.2s linear;
-        }
+      transition: color 0.2s linear;
     }
+  }
 
-    &-checkbox:checked + &-switch &-switch-bg {
-        right: 50%;
-    }
+  &-map {
+    width: 5.1em;
+    height: 4.4em;
 
-    &-map {
-        width: 5.1em;
-        height: 4.4em;
+    & .map-icon {
+      width: 2.1em;
+      height: 2.2em;
     }
+  }
 }
-// 定义标题栏的切换开关的样式，以及动画效果
-
+// 定义标题栏的切换开关的样式，以及右端地图按钮的大小
+.page-switch {
+  display: none;
+  &:checked {
+    & + .header .header-switch-bg {
+      right: 50%;
+    }
+    & ~ .home-inner .home-page-front {
+      transform: translateX(100%) rotateY(-180deg);
+    }
+    & ~ .home-inner .home-page-back {
+      transform: translateX(0) rotateY(0deg);
+    }
+  }
+}
+// 定义标题栏的切换开关的动画效果以及实现页面3d翻转切换
 
 .footer-btn {
-    width: 100%;
-    height: 2.75em;
+  width: 100%;
+  height: 2.75em;
 
-    border-radius: 0.3125em;
-    &-left {
-        @extend .footer-btn;
-        border: 0.0625em solid $color-primary;
-        background-color: #FFF;
-    }
-    &-right {
-        @extend .footer-btn;
-        margin-left: 3%;
-        background-color: $color-primary;
-    }
-    &-left:hover {
-        border: none;
-        background-color: $color-primary;
-        color: #FFF;
-    }
-    &-right:hover {
-        border: none;
-        border: 0.0625em solid $color-primary;
-        background-color: #FFF;
-        color: $color-primary;
-    }
+  border-radius: 0.3125em;
+  &-left {
+    @extend .footer-btn;
+    border: 0.0625em solid $color-primary;
+    background-color: #fff;
+  }
+  &-right {
+    @extend .footer-btn;
+    margin-left: 3%;
+    background-color: $color-primary;
+  }
+  &-left:hover {
+    border: none;
+    background-color: $color-primary;
+    color: #fff;
+  }
+  &-right:hover {
+    border: none;
+    border: 0.0625em solid $color-primary;
+    background-color: #fff;
+    color: $color-primary;
+  }
 }
 // 定义底部栏的按钮的大小和悬浮状态
 
 .home-footer {
-    &-left,
-    &-right {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-    }
-    & .left-icon {
-       width: 2.4em;
-       height: 2.4em;
+  &-left,
+  &-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-middle {
+    width: 4.6em;
+    height: 4.6em;
 
-       background: url(../img/home@3x.png) no-repeat center;
-       background-size: 2.3 2em;
+    & .rudder-icon {
+      width: 4.6em;
+      height: 4.6em;
     }
-    & .right-icon {
-        width: 2.4em;
-        height: 2.4em;
- 
-        background: url(../img/user@3x.png) no-repeat center;
-        background-size: 2.1em 2.1em;
-     }
-    & .rudder {
-        width: 4.7em;
-        height: 4.7em;
+  }
 
-        background: url(../img/write@3x.png) no-repeat;
-        background-size: cover;
-     }
+  & .left-icon {
+    width: 2.4em;
+    height: 2.4em;
+
+    & .home-icon {
+      width: 2.3em;
+      height: 2em;
+    }
+  }
+  & .right-icon {
+    width: 2.4em;
+    height: 2.4em;
+
+    & .user-icon {
+      width: 2.1em;
+      height: 2.1em;
+    }
+  }
 }
 // 定义首页底部标签栏的各个按钮样式

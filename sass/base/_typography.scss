@@ -5,6 +5,7 @@
   "../abstracts/mixins";
 
 @import "../base/colors";
+@import "../abstracts/placeholder";
 
 @font-face {
   font-family: "STHeitiSC-Light";
@@ -82,10 +83,10 @@ body {
     font-size: 1.7em;
     color: $color-primary;
   }
-  .header-checkbox:checked + .header-switch &-left {
+  .page-switch:checked + .header .header-switch &-left {
     color: $color-primary;
   }
-  .header-checkbox:checked + .header-switch &-right {
+  .page-switch:checked + .header .header-switch &-right {
     color: #FFF;
   }
 }
@@ -218,21 +219,25 @@ body {
   & .item-top-text {
     font-size: 1.2em;
     color: #999;
+    @extend %text-ellipsis;
   }
 
   & .item-middle-text {
     font-size: 1.4em;
     color: #333;
+    @extend %text-ellipsis;
 
     &-info {
       font-size: 1.5em;
       font-family:"HiraginoSansGBW3", sans-serif;
       color: $color-info;
+      @extend %text-ellipsis;
     }
   }
 
   & .item-bottom-text {
    @extend .item-top-text;
+
   }
 }
 
