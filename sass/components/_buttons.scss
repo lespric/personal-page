@@ -63,13 +63,17 @@
 
       transition: right 0.2s linear;
     }
-    &-left,
-    &-right {
+    &-left {
       z-index: 1;
       width: 50%;
       text-align: center;
 
+      @extend %switch-font-left;
       transition: color 0.2s linear;
+    }
+    &-right {
+      @extend .header-switch-left;
+      @extend %switch-font-right;
     }
   }
 
@@ -89,16 +93,25 @@
   &:checked {
     & + .header .header-switch-bg {
       right: 50%;
+    } // 滑块位移
+    + .header .header-switch-left {
+      color: $color-primary;
     }
+    + .header .header-switch-right {
+      color: #fff;
+    } // 文字颜色变化
+
     & ~ .home-inner .home-page-front {
       transform: translateX(100%) rotateY(-180deg);
     }
     & ~ .home-inner .home-page-back {
       transform: translateX(0) rotateY(0deg);
-    }
+    } // 3D翻转效果
   }
 }
 // 定义标题栏的切换开关的动画效果以及实现页面3d翻转切换
+
+
 
 .footer-btn {
   width: 100%;
@@ -107,11 +120,15 @@
   border-radius: 0.3125em;
   &-left {
     @extend .footer-btn;
+    @extend %footer-font-left;
+
     border: 0.0625em solid $color-primary;
     background-color: #fff;
   }
   &-right {
     @extend .footer-btn;
+    @extend %footer-font-right;
+
     margin-left: 3%;
     background-color: $color-primary;
   }
@@ -136,6 +153,13 @@
     flex-direction: column;
     align-items: center;
   }
+  &-text-left {
+    @extend %home-footer-font-left;
+  }
+  &-text-right {
+    @extend %home-footer-font-right;
+  }
+  
   &-middle {
     width: 4.6em;
     height: 4.6em;

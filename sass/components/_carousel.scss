@@ -89,6 +89,17 @@
     margin-left: 2em;
     display: flex;
     flex-direction: column;
+    @extend %caption-body-font;
+
+    & .name {
+      @extend %caption-body-font-name;
+    }
+    & .age {
+      @extend %caption-body-font-age;
+    }
+    & .text {
+      @extend %caption-body-font-text;
+    }
   }
 }
 .caption-account {

@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import "../base/colors";
-
 .header {
   position: fixed;
   top: 0;
@@ -14,11 +12,13 @@
   width: 100%;
   height: 4.4em;
   
+  @extend %header-font;
   background-color: $color-primary;
 }
 // 定义标题栏的宽高和背景颜色
 
 .header-title {
   width: 100%;
+  @extend %header-font-title;
 }
 // 定义标题栏的标题宽度

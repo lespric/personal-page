@@ -29,17 +29,12 @@ sass/
 |– pages/
 |   |– _home.scss         # Home specific styles
 |
-|– themes/
-|   |– _theme.scss        # Default theme
-|   |– _admin.scss        # Admin theme
-|   …                     # Etc.
-|
 |– vendors/
 |   |– _normalize.scss    # normalize
 |
 `– main.scss              # Main Sass file
 */
-.home-list-group .item-top-text, .home-list-group .item-bottom-text, .home-list-group .item-middle-text, .home-list-group .item-middle-text-info {
+.home-list-group-item .item-bottom-text, .home-list-group-item .item-top-text, .home-list-group-item .item-middle-text, .home-list-group-item .item-middle-text-info {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
@@ -276,19 +271,6 @@ a,
 a:focus {
   text-decoration: none; }
 
-.home-list-group .item-top-text, .home-list-group .item-bottom-text, .home-list-group .item-middle-text, .home-list-group .item-middle-text-info {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
-.nav-item {
-  display: flex;
-  justify-content: center; }
-
-.navbar-nav, .nav-item {
-  display: flex;
-  align-items: center; }
-
 @font-face {
   font-family: "STHeitiSC-Light";
   src: url("../fonts/STHeitiSC-Light/stheitisc.otf") format("opentype"), url("../fonts/STHeitiSC-Light/stheitisc.woff") format("woff"), url("../fonts/STHeitiSC-Light/stheitisc.ttf") format("truetype"), url("../fonts/STHeitiSC-Light/stheitisc.eot") format("embedded-opentype"), url("../fonts/STHeitiSC-Light/stheitisc.svg") format("svg");
@@ -329,111 +311,105 @@ body {
 
 .header {
   color: #fff; }
-  .header-title-font {
+  .header-title {
     font-size: 1.8em;
     text-align: center; }
-  .header-btn-font {
-    font-size: 1.6em;
-    color: #fff; }
 
-.switch-font-left {
+.header-switch-left, .header-switch-right {
   font-size: 1.7em;
   color: #fff; }
-.switch-font-right {
+.header-switch-right {
   font-size: 1.7em;
   color: #5FC0CD; }
-.page-switch:checked + .header .header-switch .switch-font-left {
-  color: #5FC0CD; }
-.page-switch:checked + .header .header-switch .switch-font-right {
-  color: #fff; }
 
-.caption-body {
+.carousel-caption .caption-body {
   color: #fff;
   line-height: 1; }
-  .caption-body .name {
+  .carousel-caption .caption-body .name {
     font-size: 1.8em; }
-  .caption-body .age {
+  .carousel-caption .caption-body .age {
     font-size: 1.4em; }
-  .caption-body .text {
+  .carousel-caption .caption-body .text {
     font-size: 1.2em; }
 
-.group-font-title {
+.list-group-title {
   color: #333;
   font-size: 1.6em;
   font-weight: 500;
   white-space: nowrap; }
 
-.item-font-title {
+.list-item-title {
   font-size: 1.6em;
   color: #999;
   white-space: nowrap; }
-.item-font-text {
+.list-item-text, .list-item-label {
   font-size: 1.6em;
   color: #333; }
-.item-font-list {
+.list-item-list {
   font-size: 1.2em; }
-.item-font-info {
+.list-item-info {
+  font-size: 1.6em;
   font-family: "HiraginoSansGBW3", sans-serif;
   color: #E26163; }
 
-.modal-header-font {
+.modal-header-btn {
   font-size: 1.6em;
   color: #ea8989; }
-.modal-body-font {
+.modal-body-input {
   font-size: 1.6em; }
-  .modal-body-font::-webkit-input-placeholder {
+  .modal-body-input::-webkit-input-placeholder {
     color: #b0b0b0; }
-  .modal-body-font:-moz-placeholder {
+  .modal-body-input:-moz-placeholder {
     color: #b0b0b0; }
-  .modal-body-font::-moz-placeholder {
+  .modal-body-input::-moz-placeholder {
     color: #b0b0b0; }
-  .modal-body-font:-ms-input-placeholder {
+  .modal-body-input:-ms-input-placeholder {
     color: #b0b0b0; }
-.modal-footer-font {
+.modal-footer-text {
   font-size: 1.4em;
   color: #b0b0b0; }
 
-.footer-font, .footer-font-left, .footer-font-right {
+.footer-btn-left, .footer-btn-right {
   font-size: 1.6em;
   font-weight: 500; }
-  .footer-font-left {
+  .footer-btn-left {
     color: #5FC0CD; }
-  .footer-font-right {
+  .footer-btn-right {
     color: #fff; }
 
-.home-footer .font-left {
+.home-footer-text-left {
   font-size: 1em;
   color: #5FC0CD; }
-.home-footer .font-right {
+.home-footer-text-right {
   font-size: 1em;
   color: #999; }
 
-.navbar .nav-font {
+.nav-item {
   font-size: 1.4em;
   color: #666;
   text-align: center; }
-.navbar-item-font {
+.nav-item-input {
   font-size: 1em;
   text-align: center; }
-  .navbar-item-font::-webkit-input-placeholder {
+  .nav-item-input::-webkit-input-placeholder {
     color: #999; }
-  .navbar-item-font:-moz-placeholder {
+  .nav-item-input:-moz-placeholder {
     color: #999; }
-  .navbar-item-font::-moz-placeholder {
+  .nav-item-input::-moz-placeholder {
     color: #999; }
-  .navbar-item-font:-ms-input-placeholder {
+  .nav-item-input:-ms-input-placeholder {
     color: #999; }
 
-.home-list-group .item-top-text, .home-list-group .item-bottom-text {
+.home-list-group-item .item-bottom-text, .home-list-group-item .item-top-text {
   font-size: 1.2em;
   color: #999; }
-.home-list-group .item-middle-text {
+.home-list-group-item .item-middle-text {
   font-size: 1.4em;
   color: #333; }
-  .home-list-group .item-middle-text-info {
-    font-size: 1.5em;
-    font-family: "HiraginoSansGBW3", sans-serif;
-    color: #E26163; }
+.home-list-group-item .item-middle-text-info {
+  font-size: 1.5em;
+  font-family: "HiraginoSansGBW3", sans-serif;
+  color: #E26163; }
 
 .container {
   width: 100%;
@@ -891,11 +867,11 @@ body {
 .nav-item {
   position: relative;
   height: 100%; }
-  .nav-item input {
+  .nav-item-input {
     width: 100%;
     height: 100%;
     cursor: pointer; }
-    .nav-item input:hover {
+    .nav-item-input:hover {
       background-color: #e6e6e6; }
   .nav-item::after {
     position: absolute;
@@ -994,6 +970,10 @@ body {
   display: none; }
   .page-switch:checked + .header .header-switch-bg {
     right: 50%; }
+  .page-switch:checked + .header .header-switch-left, .page-switch:checked + .header .header-switch-right {
+    color: #5FC0CD; }
+  .page-switch:checked + .header .header-switch-right {
+    color: #fff; }
   .page-switch:checked ~ .home-inner .home-page-front {
     transform: translateX(100%) rotateY(-180deg); }
   .page-switch:checked ~ .home-inner .home-page-back {
@@ -1217,7 +1197,7 @@ body {
 
 .home-list-group {
   padding-bottom: 5em;
-  background-color: #FFF; }
+  background-color: #fff; }
 
 .home-list-group-item {
   display: flex;
@@ -1225,7 +1205,7 @@ body {
   justify-content: space-between;
   padding: 1.4em;
   height: 9em;
-  border-bottom: 0.1em solid #E1E5E7;
+  border-bottom: 0.1em solid #e1e5e7;
   cursor: pointer; }
   .home-list-group-item:hover {
     background-color: #e6e6e6; }
@@ -1311,11 +1291,10 @@ body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.4em 2em; }
-
-.modal-input {
-  width: 100%;
-  height: 10em;
-  border: none; }
+  .modal-body-input {
+    width: 100%;
+    height: 10em;
+    border: none; }
 
 .modal-footer {
   display: -ms-flexbox;

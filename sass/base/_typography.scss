@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-@import "../abstracts/variables", "../abstracts/mixins";
-
-@import "../base/colors";
-@import "../abstracts/placeholder";
-
 @font-face {
   font-family: "STHeitiSC-Light";
   src: url("../fonts/STHeitiSC-Light/stheitisc.otf") format("opentype"),
@@ -51,20 +46,16 @@ body {
 }
 // 定义body标签在不同断点下的字体大小
 
-.header {
+%header-font {
   color: #fff;
-  &-title-font {
+  &-title {
     font-size: 1.8em;
     text-align: center;
-  }
-  &-btn-font {
-    font-size: 1.6em;
-    color: #fff;
   }
 }
 // 定义导航栏的字体大小和颜色
 
-.switch-font {
+%switch-font {
   &-left {
     font-size: 1.7em;
     color: #fff;
@@ -73,37 +64,31 @@ body {
     font-size: 1.7em;
     color: $color-primary;
   }
-  .page-switch:checked + .header .header-switch &-left {
-    color: $color-primary;
-  }
-  .page-switch:checked + .header .header-switch &-right {
-    color: #fff;
-  }
 }
-// 定义切换开关的文字大小、颜色以及颜色变化
+// 定义切换开关的文字大小、颜色
 
-.caption-body {
+%caption-body-font {
   color: #fff;
   line-height: 1;
-  & .name {
+  &-name {
     font-size: 1.8em;
   }
-  & .age {
+  &-age {
     font-size: 1.4em;
   }
-  & .text {
+  &-text {
     font-size: 1.2em;
   }
 }
 // 定义轮播图的页面文本的字体样式
 
-.group-font-title {
+%list-group-font-title {
   color: $font-text;
   font-size: 1.6em;
   font-weight: 500;
   white-space: nowrap;
 }
-.item-font {
+%list-item-font {
   &-title {
     font-size: 1.6em;
     color: $font-title;
@@ -117,31 +102,21 @@ body {
     font-size: 1.2em;
   }
   &-info {
+    font-size: 1.6em;
     font-family: "HiraginoSansGBW3", sans-serif;
     color: $color-info;
   }
 }
 // 定义列表组内的各个列表的字体样式
 
-.modal {
+%modal {
   &-header-font {
     font-size: 1.6em;
     color: #ea8989;
   }
   &-body-font {
     font-size: 1.6em;
-    &::-webkit-input-placeholder {
-      color: #b0b0b0;
-    }
-    &:-moz-placeholder {
-      color: #b0b0b0;
-    }
-    &::-moz-placeholder {
-      color: #b0b0b0;
-    }
-    &:-ms-input-placeholder {
-      color: #b0b0b0;
-    }
+    @include placeholder-color(#b0b0b0);
   }
   &-footer-font {
     font-size: 1.4em;
@@ -150,41 +125,41 @@ body {
 }
 // 定义模态框的字体样式
 
-.footer-font {
+%footer-font {
   font: {
     size: 1.6em;
     weight: 500;
   }
   &-left {
-    @extend .footer-font;
+    @extend %footer-font;
     color: $color-primary;
   }
   &-right {
-    @extend .footer-font;
+    @extend %footer-font;
     color: #fff;
   }
 }
 // 定义底部的按钮文字大小和颜色
 
-.home-footer {
-  & .font-left {
+%home-footer-font {
+  &-left {
     font-size: 1em;
     color: $color-primary;
   }
-  & .font-right {
+  &-right {
     font-size: 1em;
     color: #999;
   }
 }
 // 定义首页底部的标签栏文字大小颜色
 
-.navbar {
-  .nav-font {
+%navbar-font {
+  &-item {
     font-size: 1.4em;
     color: #666;
     text-align: center;
   }
-  &-item-font {
+  &-input {
     font-size: 1em;
     text-align: center;
     @include placeholder-color(#999);
@@ -192,28 +167,28 @@ body {
 }
 // 定义导航栏的文字样式
 
-.home-list-group {
-  & .item-top-text {
+%home-list-group-font {
+  &-top {
     font-size: 1.2em;
     color: #999;
     @extend %text-ellipsis;
   }
 
-  & .item-middle-text {
+  &-middle {
     font-size: 1.4em;
     color: #333;
     @extend %text-ellipsis;
-
-    &-info {
-      font-size: 1.5em;
-      font-family: "HiraginoSansGBW3", sans-serif;
-      color: $color-info;
-      @extend %text-ellipsis;
-    }
   }
 
-  & .item-bottom-text {
-    @extend .item-top-text;
+  &-info {
+    font-size: 1.5em;
+    font-family: "HiraginoSansGBW3", sans-serif;
+    color: $color-info;
+    @extend %text-ellipsis;
+  }
+
+  &-bottom {
+    @extend %home-list-group-font-top;
   }
 }
 // 定义首页的列表组的字体样式
