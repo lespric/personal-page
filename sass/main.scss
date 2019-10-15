@@ -19,6 +19,7 @@ sass/
 |   |– _carousel.scss     # Carousel
 |   |– _list.scss         # List-group
 |   |– _modal.scss        # Modal
+|   |– _nav.scss          # Navbar
 |
 |– layout/
 |   |– _grid.scss         # Grid system
@@ -26,13 +27,14 @@ sass/
 |   |– _main.scss         # Main
 |   |– _header.scss       # Header
 |   |– _footer.scss       # Footer
-|   |– _nav.scss          # Navbar
+|   |– _navigation.scss   # Navigation
 |
 |– pages/
 |   |– _home.scss         # Home specific styles
 |
 |– vendors/
 |   |– _normalize.scss    # normalize
+|   |– _iosSelect.scss    # isoSelect
 |
 `– main.scss              # Main Sass file
 */
@@ -55,13 +57,14 @@ sass/
   "layout/header",
   "layout/main",
   "layout/footer",
-  "layout/nav";
+  "layout/navigation";
 
 @import
   "components/buttons",
   "components/carousel",
   "components/list",
-  "components/modal";
+  "components/modal",
+  "components/nav";
 
 @import
   "pages/home";

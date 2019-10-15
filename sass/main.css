@@ -322,14 +322,14 @@ body {
   font-size: 1.7em;
   color: #5FC0CD; }
 
-.carousel-caption .caption-body {
+.caption-body {
   color: #fff;
   line-height: 1; }
-  .carousel-caption .caption-body .name {
+  .caption-body .name {
     font-size: 1.8em; }
-  .carousel-caption .caption-body .age {
+  .caption-body .age {
     font-size: 1.4em; }
-  .carousel-caption .caption-body .text {
+  .caption-body .text {
     font-size: 1.2em; }
 
 .list-group-title {
@@ -885,35 +885,6 @@ body {
   .nav-item:not(:last-child) {
     border-right: 0.0625rem solid #e1e5e7; }
 
-.home-inner {
-  position: relative;
-  width: 100%;
-  overflow-x: hidden;
-  transform-style: preserve-3d; }
-  .home-inner::after {
-    content: "";
-    display: block;
-    clear: both; }
-
-.home-page, .home-page-front, .home-page-back {
-  display: block;
-  float: left;
-  margin-right: -100%;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out; }
-  .home-page-front {
-    transform-origin: left center; }
-  .home-page-back {
-    height: 60em;
-    transform-origin: right center;
-    transform: translateX(-100%) rotateY(-180deg); }
-
-@media (prefers-reduced-motion: reduce) {
-  .home-page, .home-page-front, .home-page-back {
-    transition: none; } }
 .header-btn, .header-btn-left, .header-btn-right {
   position: absolute;
   padding: 0 1em;
@@ -1082,10 +1053,11 @@ body {
     height: 8.4em;
     background: url(../img/head@3x.png) no-repeat;
     background-size: cover; }
-  .carousel-caption .caption-body {
-    margin-left: 2em;
-    display: flex;
-    flex-direction: column; }
+
+.caption-body {
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column; }
 
 .caption-account, .caption-address {
   display: flex;
