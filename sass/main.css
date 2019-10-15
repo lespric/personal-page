@@ -17,7 +17,6 @@ sass/
 |   |– _carousel.scss     # Carousel
 |   |– _list.scss         # List-group
 |   |– _modal.scss        # Modal
-|   |– _forms.scss        # Forms
 |
 |– layout/
 |   |– _grid.scss         # Grid system
@@ -44,6 +43,14 @@ sass/
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+
+.nav-item {
+  display: flex;
+  justify-content: center; }
+
+.navbar-nav, .nav-item {
+  display: flex;
+  align-items: center; }
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
@@ -274,6 +281,14 @@ a:focus {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
+.nav-item {
+  display: flex;
+  justify-content: center; }
+
+.navbar-nav, .nav-item {
+  display: flex;
+  align-items: center; }
+
 @font-face {
   font-family: "STHeitiSC-Light";
   src: url("../fonts/STHeitiSC-Light/stheitisc.otf") format("opentype"), url("../fonts/STHeitiSC-Light/stheitisc.woff") format("woff"), url("../fonts/STHeitiSC-Light/stheitisc.ttf") format("truetype"), url("../fonts/STHeitiSC-Light/stheitisc.eot") format("embedded-opentype"), url("../fonts/STHeitiSC-Light/stheitisc.svg") format("svg");
@@ -313,27 +328,27 @@ body {
     font-size: 1.125rem; } }
 
 .header {
-  color: #FFF; }
+  color: #fff; }
   .header-title-font {
     font-size: 1.8em;
     text-align: center; }
   .header-btn-font {
     font-size: 1.6em;
-    color: #FFF; }
+    color: #fff; }
 
 .switch-font-left {
   font-size: 1.7em;
-  color: #FFF; }
+  color: #fff; }
 .switch-font-right {
   font-size: 1.7em;
   color: #5FC0CD; }
 .page-switch:checked + .header .header-switch .switch-font-left {
   color: #5FC0CD; }
 .page-switch:checked + .header .header-switch .switch-font-right {
-  color: #FFF; }
+  color: #fff; }
 
 .caption-body {
-  color: #FFF;
+  color: #fff;
   line-height: 1; }
   .caption-body .name {
     font-size: 1.8em; }
@@ -363,7 +378,7 @@ body {
 
 .modal-header-font {
   font-size: 1.6em;
-  color: #EA8989; }
+  color: #ea8989; }
 .modal-body-font {
   font-size: 1.6em; }
   .modal-body-font::-webkit-input-placeholder {
@@ -376,7 +391,7 @@ body {
     color: #b0b0b0; }
 .modal-footer-font {
   font-size: 1.4em;
-  color: #B0B0B0; }
+  color: #b0b0b0; }
 
 .footer-font, .footer-font-left, .footer-font-right {
   font-size: 1.6em;
@@ -384,7 +399,7 @@ body {
   .footer-font-left {
     color: #5FC0CD; }
   .footer-font-right {
-    color: #FFF; }
+    color: #fff; }
 
 .home-footer .font-left {
   font-size: 1em;
@@ -844,6 +859,9 @@ body {
 .header-title {
   width: 100%; }
 
+.main {
+  margin-top: 4.4em; }
+
 .footer, .home-footer {
   position: fixed;
   bottom: 0;
@@ -868,13 +886,9 @@ body {
   background-color: #fff;
   border-bottom: 0.1em solid #e1e5e7; }
   .navbar-nav {
-    display: flex;
-    align-items: center;
     height: 100%; }
 
 .nav-item {
-  display: flex;
-  align-items: center;
   position: relative;
   height: 100%; }
   .nav-item input {
@@ -912,8 +926,8 @@ body {
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform 0.4s linear;
-  transition: transform 0.4s linear; }
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out; }
   .home-page-front {
     transform-origin: left center; }
   .home-page-back {
@@ -1398,43 +1412,6 @@ body {
   height: 50px;
   overflow: scroll; }
 
-.form {
-  margin-top: 5.2em;
-  width: 100%; }
-
-.form-input-group {
-  margin-top: 0.8em;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 5em;
-  background-color: #FFF; }
-
-.form-input {
-  margin-left: 1em;
-  height: 100%;
-  color: #5FC0CD; }
-
-.form-input-label {
-  display: flex;
-  width: 5.8em;
-  height: 2.6em;
-  border-right: 0.1em solid #E1E5E7;
-  cursor: pointer; }
-
-.icon {
-  margin: auto auto; }
-  .account .icon {
-    width: 1.3em;
-    height: 2em;
-    background: url(../img/iphone@3x.png) no-repeat;
-    background-size: cover; }
-  .password .icon {
-    width: 1.5em;
-    height: 2.2em;
-    background: url(../img/locked@3x.png) no-repeat;
-    background-size: cover; }
-
 .home-inner {
   position: relative;
   width: 100%;
@@ -1452,8 +1429,8 @@ body {
   width: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform 0.4s linear;
-  transition: transform 0.4s linear; }
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out; }
   .home-page-front {
     transform-origin: left center; }
   .home-page-back {

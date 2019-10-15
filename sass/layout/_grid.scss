@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-
-@import 
-  "grid-mixins";
-  // 引用同目录下的混合宏文件
 @import 
   "../abstracts/mixins",
   "../abstracts/variables";

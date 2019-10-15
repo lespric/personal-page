@@ -1,8 +1,34 @@
 @charset "utf-8";
 
 %text-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 // 声明文本隐藏样式为省略号的占位符
+
+%flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+%flex-align-center {
+  display: flex;
+  align-items: center;
+}
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+// 声明flex布局各种类型的占位符
+
+%media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+%media-body {
+  -ms-flex: 1;
+  flex: 1;
+}
+// 声明媒体内容的样式的占位符

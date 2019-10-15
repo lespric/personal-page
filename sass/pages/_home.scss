@@ -4,38 +4,35 @@
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  @include clearfix;
 
   transform-style: preserve-3d;
-
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
 }
 // 定义首页内容的容器的布局和清除浮动，以及开启3d变换
 
 .home-page {
   display: block;
   float: left;
-  margin-right: -100%;
+  margin-right: -100%; // 使布局变为左右布局
 
   width: 100%;
 
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  backface-visibility: hidden; // 使翻转的背面的隐藏
 
-  transition: -webkit-transform 0.4s linear;
-  transition: transform 0.4s linear;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 
   &-front {
     @extend .home-page;
-    transform-origin: left center;
+    transform-origin: left center; 
+    // 定义旋转中心在左边中间点
   }
   &-back {
     @extend .home-page;
     height: 60em; // 只是作为第二页面的高度方便展示
-    transform-origin: right center;
+    transform-origin: right center; 
+    // 定义旋转中心在右边中间点
     transform: translateX(-100%) rotateY(-180deg);
   } // 使需要隐藏的元素翻转为背面，从而隐藏
 }

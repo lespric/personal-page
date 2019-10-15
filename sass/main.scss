@@ -19,7 +19,6 @@ sass/
 |   |– _carousel.scss     # Carousel
 |   |– _list.scss         # List-group
 |   |– _modal.scss        # Modal
-|   |– _forms.scss        # Forms
 |
 |– layout/
 |   |– _grid.scss         # Grid system
@@ -67,8 +66,7 @@ sass/
   "components/buttons",
   "components/carousel",
   "components/list",
-  "components/modal",
-  "components/forms";
+  "components/modal";
 
 @import
   "pages/home";

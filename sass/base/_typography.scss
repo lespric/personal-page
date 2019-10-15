@@ -1,36 +1,26 @@
 @charset "utf-8";
 
-@import
-  "../abstracts/variables",
-  "../abstracts/mixins";
+@import "../abstracts/variables", "../abstracts/mixins";
 
 @import "../base/colors";
 @import "../abstracts/placeholder";
 
 @font-face {
   font-family: "STHeitiSC-Light";
-  src: url("../fonts/STHeitiSC-Light/stheitisc.otf")
-      format("opentype"),
+  src: url("../fonts/STHeitiSC-Light/stheitisc.otf") format("opentype"),
     url("../fonts/STHeitiSC-Light/stheitisc.woff") format("woff"),
-    url("../fonts/STHeitiSC-Light/stheitisc.ttf")
-      format("truetype"),
-    url("../fonts/STHeitiSC-Light/stheitisc.eot")
-      format("embedded-opentype"),
+    url("../fonts/STHeitiSC-Light/stheitisc.ttf") format("truetype"),
+    url("../fonts/STHeitiSC-Light/stheitisc.eot") format("embedded-opentype"),
     url("../fonts/STHeitiSC-Light/stheitisc.svg") format("svg");
 
   font-family: "HiraginoSansGBW3";
-  src: url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.otf")
-      format("opentype"),
-    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff2")
-      format("woff2"),
-    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff")
-      format("woff"),
-    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.ttf")
-      format("truetype"),
+  src: url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.otf") format("opentype"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff2") format("woff2"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.woff") format("woff"),
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.ttf") format("truetype"),
     url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.eot")
       format("embedded-opentype"),
-    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.svg")
-      format("svg");
+    url("../fonts/HiraginoSansGBW3/HiraginoSansGBW3.svg") format("svg");
 } /* 引用设计字体 */
 
 html {
@@ -52,24 +42,24 @@ body {
 // 定义body标签下的全局字体样式
 
 @each $font-bp in $bp-keys-list {
-    body {
-        @include respond-to($font-bp) {
-            $i: index($bp-keys-list, $font-bp);
-            font-size: 0.625rem + 0.125 * ($i - 1);
-        }
+  body {
+    @include respond-to($font-bp) {
+      $i: index($bp-keys-list, $font-bp);
+      font-size: 0.625rem + 0.125 * ($i - 1);
     }
-} 
+  }
+}
 // 定义body标签在不同断点下的字体大小
 
 .header {
-  color: #FFF;
+  color: #fff;
   &-title-font {
     font-size: 1.8em;
     text-align: center;
   }
   &-btn-font {
     font-size: 1.6em;
-    color: #FFF;
+    color: #fff;
   }
 }
 // 定义导航栏的字体大小和颜色
@@ -77,7 +67,7 @@ body {
 .switch-font {
   &-left {
     font-size: 1.7em;
-    color: #FFF;
+    color: #fff;
   }
   &-right {
     font-size: 1.7em;
@@ -87,14 +77,13 @@ body {
     color: $color-primary;
   }
   .page-switch:checked + .header .header-switch &-right {
-    color: #FFF;
+    color: #fff;
   }
 }
 // 定义切换开关的文字大小、颜色以及颜色变化
 
-
 .caption-body {
-  color: #FFF;
+  color: #fff;
   line-height: 1;
   & .name {
     font-size: 1.8em;
@@ -109,10 +98,10 @@ body {
 // 定义轮播图的页面文本的字体样式
 
 .group-font-title {
-    color: $font-text;
-    font-size: 1.6em;
-    font-weight: 500;
-    white-space: nowrap;
+  color: $font-text;
+  font-size: 1.6em;
+  font-weight: 500;
+  white-space: nowrap;
 }
 .item-font {
   &-title {
@@ -128,7 +117,7 @@ body {
     font-size: 1.2em;
   }
   &-info {
-    font-family:"HiraginoSansGBW3", sans-serif;
+    font-family: "HiraginoSansGBW3", sans-serif;
     color: $color-info;
   }
 }
@@ -136,8 +125,8 @@ body {
 
 .modal {
   &-header-font {
-  font-size: 1.6em;
-  color: #EA8989;
+    font-size: 1.6em;
+    color: #ea8989;
   }
   &-body-font {
     font-size: 1.6em;
@@ -156,7 +145,7 @@ body {
   }
   &-footer-font {
     font-size: 1.4em;
-    color: #B0B0B0;
+    color: #b0b0b0;
   }
 }
 // 定义模态框的字体样式
@@ -172,7 +161,7 @@ body {
   }
   &-right {
     @extend .footer-font;
-    color: #FFF;
+    color: #fff;
   }
 }
 // 定义底部的按钮文字大小和颜色
@@ -193,24 +182,12 @@ body {
   .nav-font {
     font-size: 1.4em;
     color: #666;
-    text-align: center; 
+    text-align: center;
   }
   &-item-font {
     font-size: 1em;
     text-align: center;
-
-    &::-webkit-input-placeholder {
-      color: #999;
-    }
-    &:-moz-placeholder {
-      color: #999;
-    }
-    &::-moz-placeholder {
-      color: #999;
-    }
-    &:-ms-input-placeholder {
-      color: #999;
-    }
+    @include placeholder-color(#999);
   }
 }
 // 定义导航栏的文字样式
@@ -229,15 +206,14 @@ body {
 
     &-info {
       font-size: 1.5em;
-      font-family:"HiraginoSansGBW3", sans-serif;
+      font-family: "HiraginoSansGBW3", sans-serif;
       color: $color-info;
       @extend %text-ellipsis;
     }
   }
 
   & .item-bottom-text {
-   @extend .item-top-text;
-
+    @extend .item-top-text;
   }
 }
-
+// 定义首页的列表组的字体样式

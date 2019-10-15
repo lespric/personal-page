@@ -10,16 +10,15 @@
   border-bottom: 0.1em solid #e1e5e7;
 
   &-nav {
-    display: flex;
-    align-items: center;
+    @extend %flex-align-center;
     height: 100%;
   }
 }
 // 定义导航栏的布局
 
 .nav-item {
-  display: flex;
-  align-items: center;
+  @extend %flex-justify-center;
+  @extend %flex-align-center;
   position: relative;
   height: 100%;
 
